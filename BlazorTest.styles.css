@@ -1,3 +1,27 @@
+/* /Pages/Western.razor.rz.scp.css */
+*[b-b7hh2dhn76] {
+   font-family: 'Sancreek', cursive; 
+}
+.bg-old[b-b7hh2dhn76]{
+    background-image: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.2) 100%), url("img/old_book_1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.dotted[b-b7hh2dhn76] {    
+    border-bottom: solid 3px black;
+    border-style: dotted;
+}
+
+img[b-b7hh2dhn76] {
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 17px 5px 18px 5px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 17px 5px 18px 5px rgba(0,0,0,0);
+}
+
+.ff-1[b-b7hh2dhn76] {
+    font-family: 'Sancreek', cursive;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-fsyfcs59sg] {
     position: relative;
@@ -10,7 +34,7 @@
 }
 
 .sidebar[b-fsyfcs59sg] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-color: #f7f7f7;
 }
 
 .top-row[b-fsyfcs59sg] {
