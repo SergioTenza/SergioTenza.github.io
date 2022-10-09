@@ -21,11 +21,11 @@ dotnet-version: 3.1
 
 # Publishes the Blazor project to the release folder
 – name: Publish .NET Core Project
-run: dotnet publish BlazorGitHubPagesDemo.csproj -c Release -o release –nologo
+run: dotnet publish OSS-PhotoBooth.Blazor.Wasm.csproj -c Release -o release –nologo
 
 # Changes the base tag in index.html from ‘/’ to ‘BlazorGitHubPagesDemo’ to match the GitHub Pages repository subdirectory
-– name: Change base-tag in index.html from / to BlazorGitHubPagesDemo
-run: sed -i ‘s/<base href=”\/” \/>/<base href=”\/BlazorGitHubPagesDemo\/” \/>/g’ release/wwwroot/index.html
+– name: Change base-tag in index.html from / to OSS-PhotoBooth
+run: sed -i ‘s/<base href=”\/” \/>/<base href=”\/OSS-PhotoBooth\/” \/>/g’ release/wwwroot/index.html
 
 # Copy index.html to 404.html to serve the same file when a file is not found
 – name: copy index.html to 404.html
