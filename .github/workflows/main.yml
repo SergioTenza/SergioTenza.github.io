@@ -41,7 +41,7 @@ jobs:
         with:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: release\wwwroot
+          FOLDER: release/wwwroot
           
       
       
