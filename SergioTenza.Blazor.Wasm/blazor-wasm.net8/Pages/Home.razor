@@ -1,0 +1,107 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Welcome to TNZ Servicios Informaticos</h1>
+
+<FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center" VerticalAlignment="VerticalAlignment.Center">    
+    <img src="/images/logo.png" height="100px" alt="Alternate Text" />
+    <FluentDivider Style="height: 100px;" Role="DividerRole.Presentation" Orientation="Orientation.Vertical"></FluentDivider>    
+    <FluentPersona Name="Sergio Tenza"
+                    Image="/images/portrait.jpeg"
+                    ImageSize="100px">
+    </FluentPersona>
+</FluentStack>
+<FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center" VerticalAlignment="VerticalAlignment.Center" HorizontalGap="20" Style="padding: 1rem;">
+    <FluentNavLink Icon="@(new Icons.Regular.Size24.Globe())" Href="https://www.beskarforge.es/" />
+    <FluentNavLink Icon="@(Icon.FromImageUrl("/images/github-mark.png"))" Href="https://sergiotenza.github.io/" />
+    <FluentNavLink Icon="@(Icon.FromImageUrl("/images/LI-In-Bug.png"))" Href="https://www.linkedin.com/in/sergio-tenza-lopez-b9766890/" />
+    <FluentNavLink Icon="@(Icon.FromImageUrl("/images/logo-black.png"))" Href="https://twitter.com/SergioTenza" />    
+</FluentStack>
+
+
+<FluentGrid Spacing="8" Justify="JustifyContent.SpaceEvenly" Style="background-color: var(--neutral-layer-3);padding-inline: 20px;margin-top: 10px; margin-bottom:10px;">
+    <FluentGridItem sm="12" Style="text-align:center;">
+        <h4>With a strong background in C#, TypeScript, and cloud technologies.<br /> I have successfully designed and implemented distributed systems and microservices using technologies like RabbitMQ, Masstransit, Mediatr designed with Event driven architectures, CQRS and Event Sourcing. <br /> I am skilled in Git, Docker, and various databases such as Postgres, MongoDB, Hana, SQLServer and Redis.<br /> I have also worked with SAP Business One and HANA.<br />My future goals include further developing my skills in distributed systems design and exploring new innovative ideas and concepts.<br /> I am driven, passionate, and dedicated to delivering exceptional results.</h4>
+    </FluentGridItem>    
+    <FluentGridItem>
+        <img src="/images/dotnet-logo.png" alt="dotnet" height="150" />        
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/csharp-logo.png" alt="csharp" height="150" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/asp-logo.png" alt="ASP" height="150" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/blazor-logo.png" alt="Blazor" height="150" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/winforms-logo.png" alt="Winforms" height="150" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/ts-logo-256.png" alt="Typescript" height="150" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/angular.png" alt="angular" height="150" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/git-logo.png" alt="git" height="150" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/docker-logo.png" alt="docker" height="96" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/redis-logo.svg" alt="redis" height="100" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/mssql-logo.svg" alt="mssql" height="150" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/logo-SAP-Business-One.webp" alt="SAP Business one" height="100" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/sap-hana.webp" alt="SAP Hana" height="100" />
+    </FluentGridItem>
+    <FluentGridItem>
+        <img src="/images/localai-logo.jpeg" alt="LocalAI" height="150" />
+    </FluentGridItem>
+</FluentGrid>
+
+<FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center" VerticalAlignment="VerticalAlignment.Center" HorizontalGap="20" Style="padding: 1rem;">
+    <FluentCard Width="300px" Height="200px">
+        <p>Just some content in a card (with a button that does not do anything).</p>
+        <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center" VerticalAlignment="VerticalAlignment.Center" HorizontalGap="20" Style="padding: 1rem;">
+            <FluentNavLink Icon="@(Icon.FromImageUrl("/images/github-mark.png"))" Href="https://sergiotenza.github.io/">repository</FluentNavLink>
+            <FluentNavLink Icon="@(new Icons.Regular.Size24.Globe())" Href="https://www.beskarforge.es/">Demo site</FluentNavLink>
+        </FluentStack>
+    </FluentCard>
+    <FluentCard Width="300px" Height="200px">
+        <p>Just some content in a card (with a button that does not do anything).</p>
+        <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center" VerticalAlignment="VerticalAlignment.Center" HorizontalGap="20" Style="padding: 1rem;">
+            <FluentNavLink Icon="@(Icon.FromImageUrl("/images/github-mark.png"))" Href="https://sergiotenza.github.io/">repository</FluentNavLink>
+            <FluentNavLink Icon="@(new Icons.Regular.Size24.Globe())" Href="https://www.beskarforge.es/">Demo site</FluentNavLink>
+        </FluentStack>
+        
+    </FluentCard>
+    <FluentCard Width="300px" Height="200px">
+        <p>Just some content in a card (with a button that does not do anything).</p>
+        <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center" VerticalAlignment="VerticalAlignment.Center" HorizontalGap="20" Style="padding: 1rem;">
+            <FluentNavLink Icon="@(Icon.FromImageUrl("/images/github-mark.png"))" Href="https://sergiotenza.github.io/">repository</FluentNavLink>
+            <FluentNavLink Icon="@(new Icons.Regular.Size24.Globe())" Href="https://www.beskarforge.es/">Demo site</FluentNavLink>
+        </FluentStack>
+    </FluentCard>    
+    
+</FluentStack>
+<FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center" VerticalAlignment="VerticalAlignment.Center" HorizontalGap="20" Style="padding: 1rem;width: 75%;text-align: center;">
+    <div>
+        <h4>Companies already working with us</h4>
+        <FluentHorizontalScroll class="both-gradient" Speed="600" Easing="ScrollEasing.EaseInOut">
+            <FluentCard><img src="/images/aideology-logo.webp" alt="Alternate Text" width="300"/></FluentCard>
+            <FluentCard><img src="/images/garvalin.jpeg" alt="Alternate Text" width="150" /></FluentCard>
+            <FluentCard><img src="/images/logoBF-wide.png" alt="Alternate Text" width="300" /></FluentCard>
+            <FluentCard><img src="/images/LOGO-200x110.png" alt="Alternate Text" width="200" /></FluentCard>
+        </FluentHorizontalScroll>
+    </div>    
+</FluentStack>
+

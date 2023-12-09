@@ -1,0 +1,25 @@
+﻿@inherits LayoutComponentBase
+
+<FluentLayout Style="margin-top: 10px;">
+    <FluentHeader>
+        TNZ Servicios Informaticos
+        <FluentSpacer />
+        Projects Portfolio
+    </FluentHeader>
+        <FluentBodyContent>
+            <FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center" Width="100%" Style="height: 860;">
+                @Body
+            </FluentStack>
+        </FluentBodyContent>
+    <FluentFooter Style="@("margin-top: 10px;height: 40px; width:100%; color: black;text-align: center;")">
+        TNZ Servicios Informaticos	&#169; 2023
+    </FluentFooter>
+</FluentLayout>
+<FluentToastProvider />
+<FluentDialogProvider />
+<FluentTooltipProvider />
+<FluentMessageBarProvider />
+
+@code {
+    HorizontalAlignment alignment = HorizontalAlignment.Center;
+}
