@@ -17,15 +17,16 @@
 
     private async Task EditAsync()
     {
-        var data = DialogData with { Id = 0 } ?? new();
+        DialogData = new();
+        var data = DialogData;
 
         var dialog = await DialogService.ShowDialogAsync<SimpleEditCatalog>(data, new DialogParameters()
-            {
-                Height = "50vh",
-                Title = $"Contacta con nosotros",
-                PreventDismissOnOverlayClick = true,
-                PreventScroll = true,
-            });
+        {
+            Height = "85vh",
+            Title = $"Contacta con nosotros",
+            PreventDismissOnOverlayClick = true,
+            PreventScroll = true,
+        });
 
         var result = await dialog.Result;
         if (!result.Cancelled && result.Data != null)

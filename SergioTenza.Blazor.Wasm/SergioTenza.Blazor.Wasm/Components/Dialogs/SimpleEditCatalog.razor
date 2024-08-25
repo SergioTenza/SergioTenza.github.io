@@ -1,4 +1,5 @@
-﻿@implements IDialogContentComponent<SimpleEditCatalog.RegisterContent>
+﻿@using System.Diagnostics.CodeAnalysis
+@implements IDialogContentComponent<SimpleEditCatalog.RegisterContent>
 
 <!-- Header -->
 <FluentDialogHeader ShowDismiss="true">
@@ -12,57 +13,73 @@
 
 <!-- Body -->
 <FluentDialogBody>
-    <EditForm EditContext="@_editContext" FormName="simple_register">
+    <EditForm EditContext="@Context" OnValidSubmit="HandleValidSubmit" FormName="ContactForm" novalidate>
         <DataAnnotationsValidator />
-
-       @*  <FluentLabel Style="margin-bottom: 16px;">
-            Your name must be between 3 and 20 characters long,
-            and your age between 1 and 99.
-        </FluentLabel> *@
-
-        <FluentTextField Name="register_name"
-                         @bind-Value="@Content.Name"
-                         Label="Nombre"
-                         Required />
-        <FluentTextField Name="register_email"
-                         @bind-Value="@Content.Email"
-                         Label="Email"
-                         Required />
-
-        <FluentTextField Name="register_position"
-                         @bind-Value="@Content.Position"
-                         Label="Posicion"
-                         Required />
-
-        <FluentTextArea Name="register_comments"
-                         @bind-Value="@Content.Comments"
-                         Label="En que podriamos ayudarte?"
-                         Required />
-        <FluentDatePicker Name="register_date" DisabledDateFunc="@DisabledDate" @bind-PickerMonth="@PickerDay" @bind-Value="@Content.Date" Label="Elige tu dia preferido" />
-        <FluentTimePicker Name="register_time" @bind-Value="@Content.Time" Label="Hora para contactar:" />
-        
-        @* <FluentDivider Orientation="Orientation.Horizontal" Style="margin: 10px;"/>
-        <FluentStack Orientation="Orientation.Horizontal">
-            <FluentCalendar DisabledDateFunc="@DisabledDate" @bind-Value="@SelectedValue" @bind-PickerMonth="@PickerDay" Style="height: 250px;" />
-            <FluentTimePicker @bind-Value="@Content.SelectedValue" Label="Hora para contactar:" />
-            <FluentDatePicker Name="register_date" DisabledDateFunc="@DisabledDate" @bind-PickerMonth="@PickerDay" @bind-Value="@Content.Date" Label="Elige tu dia preferido"/>
-            <FluentTimePicker Name="register_time" @bind-Value="@Content.Time" Label="Hora para contactar:"/>
-        </FluentStack>     
-        <FluentDivider Orientation="Orientation.Horizontal" Style="margin: 10px;" /> *@
         <div style="color: var(--error);">
             <FluentValidationSummary />
         </div>
+        <FluentStack Orientation="Orientation.Horizontal">
+            <FluentStack Orientation="Orientation.Vertical">
+                <FluentTextField Name="ContactForm.Name"
+                                 @bind-Value="@Content.Name"
+                                 Label="Nombre"                                 
+                                 Required />
+                <FluentValidationMessage For="@(() => Content.Name)" />
+                <FluentTextField Name="ContactForm.Email"
+                                 @bind-Value="@Content.Email"
+                                 Label="Email"
+                                 Required />
+                <FluentValidationMessage For="@(() => Content.Email)" />
+                <FluentTextField Name="ContactForm.Position"
+                                 @bind-Value="@Content.Position"
+                                 Label="Posicion"
+                                 Required />
+                <FluentValidationMessage For="@(() => Content.Position)" />
+               
+                <FluentTextArea Name="ContactForm.Comments"
+                                @bind-Value="@Content.Comments"
+                                Label="En que podriamos ayudarte?"
+                                Style="width:100%;"/>
+                <FluentValidationMessage For="@(() => Content.Comments)" />
+            </FluentStack>
+           @*  <FluentDivider Style="margin: 10px;" Orientation="Orientation.Vertical" />
+            <FluentStack Orientation="Orientation.Vertical" Style="height: 100%">
+                <FluentLabel Style="margin-bottom: 16px;">
+                    Si prefieres que nos pongamos en contacto contigo por telefono agenda una llamada con nosotros.
+                </FluentLabel>
+                <FluentTextField Name="ContactForm.Telephone"
+                                 @bind-Value="@Content.Telephone"
+                                 Label="Telefono"
+                                 Required />
+                <FluentValidationMessage For="@(() => Content.Telephone)" />
+                <FluentDatePicker Name="ContactForm.Date"
+                                  DisabledDateFunc="@DisabledDate" 
+                    @bind-PickerMonth="@PickerDay"
+                                  @bind-Value="@Content.Date"
+                                  Label="Elige tu dia laborable preferido"
+                    Required/>
+                <FluentValidationMessage For="@(() => Content.Date)" />
+                <FluentTimePicker Name="ContactForm.Time"
+                                  @bind-Value="@Content.Time"                                 
+                                  Label="Hora para contactar:"
+                    Required/>
+                <FluentValidationMessage For="@(() => Content.Time)" />
+            </FluentStack> *@
+        </FluentStack>
+        
+        
+        <FluentDivider Style="margin: 10px;" Orientation="Orientation.Horizontal"/>
+       
     </EditForm>
 </FluentDialogBody>
 
 <!-- Footer -->
 <FluentDialogFooter>
-    <FluentButton Appearance="Appearance.Accent"
-                  Disabled="@(!_editContext.Validate())"
-                  OnClick="@SaveAsync">
-        Save
-    </FluentButton>
+    <FluentDivider Style="margin: 10px;" Orientation="Orientation.Horizontal" />
+    <FluentButton Appearance="Appearance.Accent" OnClick="SaveAsync"
+                  Disabled="@(!Context.Validate())">Enviar</FluentButton>
     <FluentButton Appearance="Appearance.Neutral"
+                  
                   OnClick="@CancelAsync">
         Cancel
     </FluentButton>
@@ -70,63 +87,69 @@
 
 @code
 {
-    private EditContext _editContext = default!;
+    @* Disabled="@(!Content.Validate())" *@
     private DateTime PickerDay = DateTime.Today;
     private bool DisabledDate(DateTime date)
     {
         return (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday);
     }
-    
+
     [CascadingParameter]
     public FluentDialog Dialog { get; set; } = default!;
 
     [Parameter]
-    public SimpleEditCatalog.RegisterContent Content { get; set; } = default!;
+    public RegisterContent Content { get; set; } = default!;    
+
+    private EditContext Context { get; set; } = default!;
 
     protected override void OnInitialized()
     {
-        _editContext = new EditContext(Content);
+        if (Content is not null)
+        {
+            Context = new EditContext(Content);
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        // Process the valid form
+        await SaveAsync();
     }
 
     private async Task SaveAsync()
     {
-        if (_editContext.Validate())
-        {
-            await Dialog.CloseAsync(Content);
-        }
+        await Dialog.CloseAsync();
     }
 
     private async Task CancelAsync()
     {
         await Dialog.CancelAsync();
     }
+
+    [RequiresUnreferencedCode("Necessary because of RangeAttribute usage")]
     public record RegisterContent
     {
-        public int Id { get; set; } = 0;
-
-        [MinLength(3)]
-        [MaxLength(20)]
+        [MinLength(3,ErrorMessage = "El campo Nombre debe tener al menos 3 caracteres.")]
+        [MaxLength(20, ErrorMessage = "El campo no Nombre debe tener mas de 20 caracteres.")]
         public string Name { get; set; } = string.Empty;
 
-        [MinLength(3)]
-        [MaxLength(20)]
+        [MinLength(3, ErrorMessage = "El campo Posicion debe tener al menos 3 caracteres.")]
+        [MaxLength(20, ErrorMessage = "El campo Posicion no debe tener mas de 20 caracteres.")]
         public string Position { get; set; } = string.Empty;
 
+        // [Phone(ErrorMessage = "El telefono suministrado no es valido.")]
+        // public string Telephone { get; set; } = string.Empty;
         
-        [EmailAddress]
-        public string Email { get; set; } = string.Empty;
-
-        [MinLength(3)]
-        [MaxLength(20)]
+        [MinLength(10, ErrorMessage = "El campo Comentario debe tener al menos 10 caracteres.")]
         public string Comments { get; set; } = string.Empty;
 
-        [DateRange]
-        public DateTime? Date = null;
+        [EmailAddress(ErrorMessage = "El email suministrado no es valido.")]
+        public string Email { get; set; } = string.Empty;
 
-        [TimeRange("08:00", "18:00", ErrorMessage = "La hora debe estar entre las 08:00 y las 18:00.")]
-        public DateTime? Time = DateTime.Now;
+        // [DateRange]
+        // public DateTime? Date { get; set; } = DateTime.Now;
 
-        // [Range(1, 99)]
-        // public int Age { get; set; }
+        // [TimeRange("08:00", "18:00", ErrorMessage = "La hora debe estar entre las 08:00 y las 18:00.")]
+        // public DateTime? Time { get; set; } = null;
     }
 }

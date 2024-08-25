@@ -13,17 +13,12 @@ namespace SergioTenza.Blazor.Wasm.Attributes
             _maxTime = TimeSpan.Parse(maxTime);
         }
 
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-        {
-            if (value is DateTime dateTime)
+        protected override ValidationResult IsValid(object? value, ValidationContext validationContext) =>
+            value switch
             {
-                var time = dateTime.TimeOfDay;
-                if (time < _minTime || time > _maxTime)
-                {
-                    return new ValidationResult($"La hora debe estar entre {_minTime} y {_maxTime}.");
-                }
-            }
-            return ValidationResult.Success;
-        }
+                null => ValidationResult.Success,
+                DateTime dateTime when dateTime.TimeOfDay < _minTime || dateTime.TimeOfDay > _maxTime => new ValidationResult($"La hora debe estar entre {_minTime} y {_maxTime}."),
+                _ => ValidationResult.Success
+            };          
     }
 }
