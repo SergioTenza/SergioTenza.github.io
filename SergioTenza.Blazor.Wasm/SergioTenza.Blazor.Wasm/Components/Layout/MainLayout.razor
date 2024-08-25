@@ -1,0 +1,25 @@
+﻿@inherits FluentMainLayout
+
+@* <FluentToastProvider />
+<FluentDialogProvider />
+<FluentTooltipProvider />
+<FluentMessageBarProvider />
+<FluentMenuProvider /> *@
+
+<FluentLayout Style="margin-top: 10px;">    
+    @* <FluentHeader>
+        TNZ Servicios Informaticos
+        <FluentSpacer />
+        Soluciones empresariales con Blazor y dotnet
+    </FluentHeader>     *@
+    <FluentBodyContent>
+        @Body
+    </FluentBodyContent>            
+    <FluentFooter>
+        <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" Width="100%" Style=@("height: 40px; color: black; text-align: center;")>
+            TNZ Servicios Informaticos &copy; 2024
+        </FluentStack>
+    </FluentFooter>    
+</FluentLayout>
+
+@* <main>  </main> *@
