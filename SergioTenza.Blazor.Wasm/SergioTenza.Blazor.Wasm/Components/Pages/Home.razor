@@ -1,9 +1,60 @@
 ﻿@page "/"
 
+
 <PageTitle>Home</PageTitle>
 
-<FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Top" HorizontalAlignment="HorizontalAlignment.Center" Width="100%" Style="margin-top: 5px;height: 85vh;">
-    <img src="assets/logo.png" class="img-thumbnail" width="150" alt="Responsive image">
-    <h2>TNZ <small class="text-muted">Servicios Informaticos</small></h2>
-    <h4> Soluciones empresariales con Blazor y dotnet</h4>
-</FluentStack>
+<section>
+    <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Top" HorizontalAlignment="HorizontalAlignment.Center" Width="100%" Style="margin-top: 30px;height: 85vh;padding-inline: 5px;" HorizontalGap="5">
+        <img src="assets/logo.png" class="img-thumbnail" width="150" alt="Responsive image">
+        <h1>TNZ Servicios Informaticos</h1>
+        <h2>Consultoría y Formación Especializada en Blazory Dotnet</h2>            
+        <h4> Transformamos tus ideas en realidad con soluciones Blazor de alta calidad</h4>
+        <FluentButton Appearance="Appearance.Accent">Contáctanos hoy</FluentButton>
+
+        <FluentAccordion ActiveId="@activeId" OnAccordionItemChange="HandleOnAccordionItemChange">
+           @*  <FluentAccordionItem Heading="Panel one">
+                <FluentIcon Value="@(new Icons.Regular.Size20.Globe())" Color="@Color.Neutral" Slot="start" />
+                Panel one content, using the 'start' slot for extra header content (in this case an icon)
+            </FluentAccordionItem>
+            <FluentAccordionItem Heading="Panel two">
+                <div slot="end">
+                    #end#
+                </div>
+                Panel two content, using the 'end' slot for extra header content (in this case an HTML button)
+            </FluentAccordionItem>
+            <FluentAccordionItem Expanded="true" Heading="Panel three">
+                Panel three content
+            </FluentAccordionItem>
+            <FluentAccordionItem Expanded="true">
+                <HeadingTemplate>
+                    Panel <span style="color:red">Four</span>
+                </HeadingTemplate>
+                <ChildContent>
+                    Panel four content
+                </ChildContent>
+            </FluentAccordionItem> *@
+            <FluentAccordionItem Heading="Vision">
+                <FluentIcon Value="@(new Icons.Regular.Size20.Globe())" Color="@Color.Neutral" Slot="start" />                
+                <Vision/>
+            </FluentAccordionItem>
+            <FluentAccordionItem Heading="Servicios">
+                <FluentIcon Value="@(new Icons.Regular.Size20.Globe())" Color="@Color.Neutral" Slot="start" />                
+                <Services/>
+            </FluentAccordionItem>
+            <FluentAccordionItem Heading="Porque Blazor?">
+                <FluentIcon Value="@(new Icons.Regular.Size20.Globe())" Color="@Color.Neutral" Slot="start" />            
+                <WhyBlazor/>
+            </FluentAccordionItem>
+        </FluentAccordion>
+    </FluentStack>
+</section>
+ @code{
+    string activeId = "accordion-1";
+
+    FluentAccordionItem? changed;
+
+    private void HandleOnAccordionItemChange(FluentAccordionItem item)
+    {
+        changed = item;
+    }
+ }
