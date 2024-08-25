@@ -4,8 +4,7 @@ using SergioTenza.Blazor.Wasm.Components;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorComponents()
-    .AddInteractiveWebAssemblyComponents();
-
+    .AddInteractiveServerComponents();
 builder.Services.AddFluentUIComponents();
 
 var app = builder.Build();
@@ -25,7 +24,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapRazorComponents<App>()
-    .AddInteractiveWebAssemblyRenderMode();
+app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
 
 app.Run();

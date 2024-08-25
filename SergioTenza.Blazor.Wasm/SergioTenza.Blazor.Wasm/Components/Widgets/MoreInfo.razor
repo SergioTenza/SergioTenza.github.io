@@ -1,0 +1,25 @@
+﻿<FluentAccordion ActiveId="@activeId" OnAccordionItemChange="HandleOnAccordionItemChange" Style="width: 75%;">
+    <FluentAccordionItem Heading="Quien somos">
+        <FluentIcon Value="@(new Icons.Regular.Size20.Globe())" Color="@Color.Neutral" Slot="start" />
+        <Vision />
+    </FluentAccordionItem>
+    <FluentAccordionItem Heading="Porque Blazor?">
+        <FluentIcon Value="@(new Icons.Regular.Size20.Globe())" Color="@Color.Neutral" Slot="start" />
+        <WhyBlazor />
+    </FluentAccordionItem>
+    <FluentAccordionItem Heading="Servicios">
+        <FluentIcon Value="@(new Icons.Regular.Size20.Globe())" Color="@Color.Neutral" Slot="start" />
+        <Services />
+    </FluentAccordionItem>
+</FluentAccordion>
+
+@code {
+    string activeId = "accordion-1";
+
+    FluentAccordionItem? changed;
+
+    private void HandleOnAccordionItemChange(FluentAccordionItem item)
+    {
+        changed = item;
+    }
+}

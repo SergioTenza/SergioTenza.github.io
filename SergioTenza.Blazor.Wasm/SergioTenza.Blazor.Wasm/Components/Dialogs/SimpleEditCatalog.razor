@@ -1,0 +1,132 @@
+﻿@implements IDialogContentComponent<SimpleEditCatalog.RegisterContent>
+
+<!-- Header -->
+<FluentDialogHeader ShowDismiss="true">
+    <FluentStack VerticalAlignment="VerticalAlignment.Center">
+        <FluentIcon Value="@(new Icons.Regular.Size24.WindowApps())" />
+        <FluentLabel Typo="Typography.PaneHeader">
+            @Dialog.Instance.Parameters.Title
+        </FluentLabel>
+    </FluentStack>
+</FluentDialogHeader>
+
+<!-- Body -->
+<FluentDialogBody>
+    <EditForm EditContext="@_editContext" FormName="simple_register">
+        <DataAnnotationsValidator />
+
+       @*  <FluentLabel Style="margin-bottom: 16px;">
+            Your name must be between 3 and 20 characters long,
+            and your age between 1 and 99.
+        </FluentLabel> *@
+
+        <FluentTextField Name="register_name"
+                         @bind-Value="@Content.Name"
+                         Label="Nombre"
+                         Required />
+        <FluentTextField Name="register_email"
+                         @bind-Value="@Content.Email"
+                         Label="Email"
+                         Required />
+
+        <FluentTextField Name="register_position"
+                         @bind-Value="@Content.Position"
+                         Label="Posicion"
+                         Required />
+
+        <FluentTextArea Name="register_comments"
+                         @bind-Value="@Content.Comments"
+                         Label="En que podriamos ayudarte?"
+                         Required />
+        <FluentDatePicker Name="register_date" DisabledDateFunc="@DisabledDate" @bind-PickerMonth="@PickerDay" @bind-Value="@Content.Date" Label="Elige tu dia preferido" />
+        <FluentTimePicker Name="register_time" @bind-Value="@Content.Time" Label="Hora para contactar:" />
+        
+        @* <FluentDivider Orientation="Orientation.Horizontal" Style="margin: 10px;"/>
+        <FluentStack Orientation="Orientation.Horizontal">
+            <FluentCalendar DisabledDateFunc="@DisabledDate" @bind-Value="@SelectedValue" @bind-PickerMonth="@PickerDay" Style="height: 250px;" />
+            <FluentTimePicker @bind-Value="@Content.SelectedValue" Label="Hora para contactar:" />
+            <FluentDatePicker Name="register_date" DisabledDateFunc="@DisabledDate" @bind-PickerMonth="@PickerDay" @bind-Value="@Content.Date" Label="Elige tu dia preferido"/>
+            <FluentTimePicker Name="register_time" @bind-Value="@Content.Time" Label="Hora para contactar:"/>
+        </FluentStack>     
+        <FluentDivider Orientation="Orientation.Horizontal" Style="margin: 10px;" /> *@
+        <div style="color: var(--error);">
+            <FluentValidationSummary />
+        </div>
+    </EditForm>
+</FluentDialogBody>
+
+<!-- Footer -->
+<FluentDialogFooter>
+    <FluentButton Appearance="Appearance.Accent"
+                  Disabled="@(!_editContext.Validate())"
+                  OnClick="@SaveAsync">
+        Save
+    </FluentButton>
+    <FluentButton Appearance="Appearance.Neutral"
+                  OnClick="@CancelAsync">
+        Cancel
+    </FluentButton>
+</FluentDialogFooter>
+
+@code
+{
+    private EditContext _editContext = default!;
+    private DateTime PickerDay = DateTime.Today;
+    private bool DisabledDate(DateTime date)
+    {
+        return (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday);
+    }
+    
+    [CascadingParameter]
+    public FluentDialog Dialog { get; set; } = default!;
+
+    [Parameter]
+    public SimpleEditCatalog.RegisterContent Content { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        _editContext = new EditContext(Content);
+    }
+
+    private async Task SaveAsync()
+    {
+        if (_editContext.Validate())
+        {
+            await Dialog.CloseAsync(Content);
+        }
+    }
+
+    private async Task CancelAsync()
+    {
+        await Dialog.CancelAsync();
+    }
+    public record RegisterContent
+    {
+        public int Id { get; set; } = 0;
+
+        [MinLength(3)]
+        [MaxLength(20)]
+        public string Name { get; set; } = string.Empty;
+
+        [MinLength(3)]
+        [MaxLength(20)]
+        public string Position { get; set; } = string.Empty;
+
+        
+        [EmailAddress]
+        public string Email { get; set; } = string.Empty;
+
+        [MinLength(3)]
+        [MaxLength(20)]
+        public string Comments { get; set; } = string.Empty;
+
+        [DateRange]
+        public DateTime? Date = null;
+
+        [TimeRange("08:00", "18:00", ErrorMessage = "La hora debe estar entre las 08:00 y las 18:00.")]
+        public DateTime? Time = DateTime.Now;
+
+        // [Range(1, 99)]
+        // public int Age { get; set; }
+    }
+}

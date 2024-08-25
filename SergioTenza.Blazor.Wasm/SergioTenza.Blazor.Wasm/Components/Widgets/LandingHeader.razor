@@ -1,0 +1,36 @@
+﻿ @inject IDialogService DialogService 
+
+<img src="assets/logo.png" class="img-thumbnail" width="150" alt="Responsive image" style="border-radius: 25px;" />
+<h1>TNZ Servicios Informaticos</h1>
+<h2>Consultoría y Formación Especializada en Blazor y Dotnet</h2>
+<FluentStack HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="150">
+    <img src="assets/blazor-logo-trans.png" class="img-thumbnail" width="100" alt="Responsive image">
+    <img src="assets/dotnet-logo-trans.png" class="img-thumbnail" width="100" alt="Responsive image">
+</FluentStack>
+<h4> Transformamos tus ideas en realidad con soluciones Blazor de alta calidad</h4>
+<FluentButton Appearance="Appearance.Accent" Style="margin-top: 20px;" OnClick="@EditAsync">Contáctanos hoy</FluentButton>
+
+
+@code{
+    //OnClick="@EditAsync"
+    SimpleEditCatalog.RegisterContent DialogData { get; set; } = new();
+
+    private async Task EditAsync()
+    {
+        var data = DialogData with { Id = 0 } ?? new();
+
+        var dialog = await DialogService.ShowDialogAsync<SimpleEditCatalog>(data, new DialogParameters()
+            {
+                Height = "50vh",
+                Title = $"Contacta con nosotros",
+                PreventDismissOnOverlayClick = true,
+                PreventScroll = true,
+            });
+
+        var result = await dialog.Result;
+        if (!result.Cancelled && result.Data != null)
+        {
+            DialogData = (SimpleEditCatalog.RegisterContent)result.Data;
+        }
+    }
+}
