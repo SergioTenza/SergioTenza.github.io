@@ -1,4 +1,5 @@
 ﻿ @inject IDialogService DialogService 
+ @inject IToastService ToastService
 
 <img src="assets/logo.png" class="img-thumbnail" width="150" alt="Responsive image" style="border-radius: 25px;" />
 <h1>TNZ Servicios Informaticos</h1>
@@ -32,6 +33,15 @@
         if (!result.Cancelled && result.Data != null)
         {
             DialogData = (SimpleEditCatalog.RegisterContent)result.Data;
+            ToastService.ShowSuccess("Gracias por contactar con nosotros.");
+        }
+        else if (result.Cancelled)
+        {
+            ToastService.ShowWarning("Solicitud de contacto cancelada.");
+        }
+        else
+        {
+            ToastService.ShowError("La solicitud de contacto ha fallado.");
         }
     }
 }

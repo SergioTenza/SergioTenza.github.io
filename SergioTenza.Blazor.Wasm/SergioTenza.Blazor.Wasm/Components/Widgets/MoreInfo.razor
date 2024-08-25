@@ -1,15 +1,23 @@
 ﻿<FluentAccordion ActiveId="@activeId" OnAccordionItemChange="HandleOnAccordionItemChange" Style="width: 75%;">
     <FluentAccordionItem Heading="Quien somos">
-        <FluentIcon Value="@(new Icons.Regular.Size20.Globe())" Color="@Color.Neutral" Slot="start" />
+        <FluentIcon Value="@(new Icons.Regular.Size20.Person())" Color="@Color.Neutral" Slot="start" />
         <Vision />
     </FluentAccordionItem>
     <FluentAccordionItem Heading="Porque Blazor?">
-        <FluentIcon Value="@(new Icons.Regular.Size20.Globe())" Color="@Color.Neutral" Slot="start" />
+        <FluentIcon Value="@(new Icons.Regular.Size20.EditSettings())" Color="@Color.Neutral" Slot="start" />
         <WhyBlazor />
     </FluentAccordionItem>
     <FluentAccordionItem Heading="Servicios">
-        <FluentIcon Value="@(new Icons.Regular.Size20.Globe())" Color="@Color.Neutral" Slot="start" />
+        <FluentIcon Value="@(new Icons.Regular.Size20.Server())" Color="@Color.Neutral" Slot="start" />
         <Services />
+    </FluentAccordionItem>
+    <FluentAccordionItem Heading="Trabajar con nosotros">
+        <FluentIcon Value="@(new Icons.Regular.Size20.CalendarWorkWeek())" Color="@Color.Neutral" Slot="start" />
+        <WorkWithUs/>
+    </FluentAccordionItem>
+    <FluentAccordionItem Heading="Nuestros clientes">
+        <FluentIcon Value="@(new Icons.Regular.Size20.LinkPerson())" Color="@Color.Neutral" Slot="start" />
+        <Testimonials/>
     </FluentAccordionItem>
 </FluentAccordion>
 

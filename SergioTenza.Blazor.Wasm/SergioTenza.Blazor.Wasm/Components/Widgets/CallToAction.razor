@@ -1,0 +1,46 @@
+﻿ @inject IDialogService DialogService
+ @inject IToastService ToastService
+
+
+<section>
+    <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center">
+        <h2>¿Listo para Empezar?</h2>
+        <p>Contáctanos hoy para una consulta gratuita y descubre cómo podemos ayudarte.</p>
+        <FluentButton Appearance="Appearance.Accent" Style="margin-top: 20px;" OnClick="@EditAsync">Contáctanos hoy</FluentButton>
+    </FluentStack>
+</section>
+
+
+@code {
+    //OnClick="@EditAsync"
+    SimpleEditCatalog.RegisterContent DialogData { get; set; } = new();
+
+    private async Task EditAsync()
+    {
+        DialogData = new();
+        var data = DialogData;
+
+        var dialog = await DialogService.ShowDialogAsync<SimpleEditCatalog>(data, new DialogParameters()
+            {
+                Height = "85vh",
+                Title = $"Contacta con nosotros",
+                PreventDismissOnOverlayClick = true,
+                PreventScroll = true,
+            });
+
+        var result = await dialog.Result;
+        if (!result.Cancelled && result.Data != null)
+        {
+            DialogData = (SimpleEditCatalog.RegisterContent)result.Data;
+            ToastService.ShowSuccess("Gracias por contactar con nosotros.");
+        }
+        else if (result.Cancelled)
+        {
+            ToastService.ShowWarning("Solicitud de contacto cancelada.");
+        }
+        else
+        {
+            ToastService.ShowError("La solicitud de contacto ha fallado.");
+        }
+    }
+}

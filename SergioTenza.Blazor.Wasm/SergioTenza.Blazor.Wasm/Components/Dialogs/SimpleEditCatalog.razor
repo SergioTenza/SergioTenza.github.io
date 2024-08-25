@@ -13,7 +13,7 @@
 
 <!-- Body -->
 <FluentDialogBody>
-    <EditForm EditContext="@Context" OnValidSubmit="HandleValidSubmit" FormName="ContactForm" novalidate>
+    <EditForm EditContext="@Context" FormName="ContactForm" novalidate>
         <DataAnnotationsValidator />
         <div style="color: var(--error);">
             <FluentValidationSummary />
@@ -108,17 +108,11 @@
         {
             Context = new EditContext(Content);
         }
-    }
-
-    private async Task HandleValidSubmit()
-    {
-        // Process the valid form
-        await SaveAsync();
-    }
+    }    
 
     private async Task SaveAsync()
-    {
-        await Dialog.CloseAsync();
+    {        
+        await Dialog.CloseAsync(Content);
     }
 
     private async Task CancelAsync()
