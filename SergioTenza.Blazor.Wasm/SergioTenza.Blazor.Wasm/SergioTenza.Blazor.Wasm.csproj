@@ -4,6 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>16bd5fd6-7867-4fc0-a7c0-b12c2db6f809</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +13,7 @@
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.9.3" />
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.6.0" />
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.9.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
     <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
 
