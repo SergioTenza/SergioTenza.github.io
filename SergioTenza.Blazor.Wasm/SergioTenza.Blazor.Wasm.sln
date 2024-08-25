@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.32916.344
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SergioTenza.Blazor.Wasm", "SergioTenza.Blazor.Wasm\SergioTenza.Blazor.Wasm.csproj", "{233439C8-CAEB-4348-95F2-A76742FDFCB4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AFA2703F-E901-4DA8-B453-182CB21AEC94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

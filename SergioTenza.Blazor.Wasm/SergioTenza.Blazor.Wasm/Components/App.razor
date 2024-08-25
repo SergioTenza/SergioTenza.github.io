@@ -1,16 +1,19 @@
+﻿
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <base href="/" />   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
     <link href="_content/Microsoft.FluentUI.AspNetCore.Components/css/reboot.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="SergioTenza.Blazor.Wasm.styles.css" />
+    <HeadOutlet />
 </head>
 
 <body class="">
-    <nav class="navbar bg-primary mb-5">
+   @*  <nav class="navbar bg-primary mb-5">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="/">
                 <img src="assets/logo_transparent.png" alt="Logo" width="50" height="50"
@@ -25,8 +28,9 @@
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
-    </div>
-    <script src="_framework/blazor.webassembly.js"></script>
+    </div> *@
+    <Routes/>
+    <script src="_framework/blazor.web.js"></script>
     <script src="_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lib.module.js" type="module" async></script>
 </body>
 
