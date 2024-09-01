@@ -30,7 +30,7 @@
         });
 
         var result = await dialog.Result;
-        if (!result.Cancelled && result.Data != null)
+        if (!result.Cancelled && result.Data != null && result.Data is not string)
         {
             DialogData = (SimpleEditCatalog.RegisterContent)result.Data;
             ToastService.ShowSuccess("Gracias por contactar con nosotros.");
@@ -39,9 +39,13 @@
         {
             ToastService.ShowWarning("Solicitud de contacto cancelada.");
         }
+        else if(result.Data != null && result.Data is string)
+        {
+            ToastService.ShowError($"La solicitud de contacto ha fallado.\r\n{result.Data}");
+        }
         else
         {
             ToastService.ShowError("La solicitud de contacto ha fallado.");
-        }
+        }    
     }
 }

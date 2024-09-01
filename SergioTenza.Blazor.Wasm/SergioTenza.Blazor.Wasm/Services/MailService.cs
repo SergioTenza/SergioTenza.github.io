@@ -6,7 +6,7 @@ namespace SergioTenza.Blazor.Wasm.Services;
 
 public class MailService
 {
-    public async Task<bool> SendMailNotification(string sender, string message, string name, string position)
+    public (bool success,string message) SendMailNotification(string sender, string message, string name, string position)
     {
         try
         {
@@ -28,7 +28,7 @@ public class MailService
 
                 client.Send(messageMime);
                 client.Disconnect(true);
-                return true;
+                return (true,string.Empty);
 
             }
 
@@ -36,7 +36,7 @@ public class MailService
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);  
-            return false;
+            return (false,ex.Message);
         }
     }
 }

@@ -103,14 +103,14 @@
     private async Task SaveAsync()
     {
         var mailService = new MailService();
-        var sended = await mailService.SendMailNotification(Content.Email, Content.Comments, Content.Name, Content.Position);
-        if (sended)
+        var sended = mailService.SendMailNotification(Content.Email, Content.Comments, Content.Name, Content.Position);
+        if (sended.success)
         {
             await Dialog.CloseAsync(Content);
         }
         else
         {
-            await Dialog.CloseAsync();
+            await Dialog.CloseAsync(sended.message);
         }
     }
 
