@@ -1,4 +1,3 @@
-using home.sergeix.source.SergioTenza_github_io.SergioTenza_Blazor_Wasm.SergioTenza_Blazor_Wasm.Components;
 using Microsoft.FluentUI.AspNetCore.Components;
 using SergioTenza.Blazor.Wasm.Components;
 using SergioTenza.Blazor.Wasm.Services;
@@ -9,6 +8,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddFluentUIComponents();
 builder.Services.AddSingleton(builder.Configuration.GetSection("EmailSettings").Get<EmailSettings>() ?? new EmailSettings());
+builder.Services.AddSingleton<MailService>();
 
 var app = builder.Build();
 
