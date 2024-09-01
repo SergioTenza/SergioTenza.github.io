@@ -8,25 +8,35 @@ public class MailService
 {
     public async Task<bool> SendMailNotification(string sender, string message, string name, string position)
     {
-        var messageMime = new MimeMessage();
-        messageMime.From.Add(new MailboxAddress(name, sender));
-        messageMime.To.Add(new MailboxAddress("TNZ Servicios Informaticos", "info@tnzservicios.es"));
-        messageMime.Subject = $"Web contact from {name} - {position}";
-
-        messageMime.Body = new TextPart("plain")
+        try
         {
-            Text = message
-        };
+            var messageMime = new MimeMessage();
+            messageMime.From.Add(new MailboxAddress(name, sender));
+            messageMime.To.Add(new MailboxAddress("TNZ Servicios Informaticos", "info@tnzservicios.es"));
+            messageMime.Subject = $"Web contact from {name} - {position}";
 
-        using (var client = new SmtpClient())
-        {
-            client.Connect("smtp.ionos.es", 465, true);
+            messageMime.Body = new TextPart("plain")
+            {
+                Text = message
+            };
 
-            client.Authenticate("info@tnzservicios.es", "password");
+            using (var client = new SmtpClient())
+            {
+                client.Connect("smtp.ionos.es", 465, true);
 
-            client.Send(messageMime);
-            client.Disconnect(true);
-            return false;
+                client.Authenticate("info@tnzservicios.es", "password");
+
+                client.Send(messageMime);
+                client.Disconnect(true);
+                return true;
+
+            }
 
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);  
+            return false;
+        }
     }
+}
