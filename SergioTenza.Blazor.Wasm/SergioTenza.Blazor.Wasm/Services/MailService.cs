@@ -6,14 +6,21 @@ namespace SergioTenza.Blazor.Wasm.Services;
 
 public class MailService
 {
+    private readonly EmailSettings _emailSettings;
+
+    public MailService(EmailSettings emailSettings)
+    {
+        _emailSettings = emailSettings;
+    }
+
     public (bool success,string message) SendMailNotification(string sender, string message, string name, string position)
     {
         try
         {
             var messageMime = new MimeMessage();
             messageMime.From.Add(new MailboxAddress(name, sender));
-            messageMime.To.Add(new MailboxAddress("TNZ Servicios Informaticos", "info@tnzservicios.es"));
-            messageMime.Subject = $"Web contact from {name} - {position}";
+            messageMime.To.Add(new MailboxAddress(_emailSettings.ToName, _emailSettings.ToEmail));
+            messageMime.Subject = $"{_emailSettings.Subject}  from {name} - {position}";
 
             messageMime.Body = new TextPart("plain")
             {
@@ -22,14 +29,13 @@ public class MailService
 
             using (var client = new SmtpClient())
             {
-                client.Connect("smtp.ionos.es", 465, true);
+                client.Connect(_emailSettings.SmtpServer, _emailSettings.SmtpPort, _emailSettings.EnableSsl);
 
-                client.Authenticate("info@tnzservicios.es", "password");
+                client.Authenticate(_emailSettings.SmtpUsername,_emailSettings.SmtpPassword);
 
                 client.Send(messageMime);
                 client.Disconnect(true);
-                return (true,string.Empty);
-
+                return (true,sender);
             }
 
         }
