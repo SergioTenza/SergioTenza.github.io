@@ -1,21 +1,70 @@
 ﻿<FluentGridItem xs="12" md="6">
     <section>   
-        <FluentCard Style="max-width:50vw;">
-            <h2 style="color:#6A1B9A;">¿Por Qué Elegir Blazor?</h2>
-            <h3>Blazor es una excelente opción para cualquier empresa que busque un stack tecnológico único y eficiente. Aquí te explicamos por qué:</h3>
-            <FluentGrid>
-
+        <FluentCard Style="max-width:100vw;">
+            <h2 style="color:#6A1B9A;text-align:center;">¿Por Qué Elegir Blazor?</h2>
+            <h3 style="text-align:center;">Blazor es una excelente opción para cualquier empresa que busque un stack tecnológico único y eficiente.</h3>
+            <FluentGrid Spacing="3" AdaptiveRendering="true" Justify="JustifyContent.Center">
+                <FluentGridItem xs="6" md="4">
+                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
+                        <p>
+                            <img src="assets/c-sharp.png" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
+                        </p>
+                        <strong>Único Stack Tecnológico</strong><br> Blazor permite desarrollar tanto el frontend como el backend utilizando C#, eliminando la necesidad de aprender múltiples lenguajes y frameworks.
+                    </FluentCard>
+                </FluentGridItem>
+                <FluentGridItem xs="6" md="4">
+                    <FluentCard Style="background-color: #512BD4;; color:white;text-align:center;">
+                        <p>
+                            <img src="assets/blazor-server.png" class="img-thumbnail" alt="Responsive image" style="max-height:150px;">
+                            <img src="assets/blazor-webassembly.png" class="img-thumbnail" alt="Responsive image" style="max-height:150px;">
+                            <img src="assets/hybrid-apps-1.png" class="img-thumbnail" alt="Responsive image" style="max-height:150px;">
+                        </p>
+                        <strong>Múltiples Modelos de Hospedaje y Renderizado</strong><br> Blazor ofrece flexibilidad con modelos de hospedaje como Blazor Server, Blazor WebAssembly y Blazor Hybrid, modelos de renderizado ClientSide, ServerSide o Static Server Side (SSR) adaptándose a diferentes necesidades y escenarios.
+                    </FluentCard>
+                </FluentGridItem>
+                <FluentGridItem xs="6" md="4">
+                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
+                        <p>
+                            <img src="assets/nuget-logo.png" class="img-thumbnail" alt="Responsive image" style="max-height:150px;">
+                        </p>
+                        <strong>Ecosistema Estable y Potente</strong><br> Al estar basado en .NET, Blazor se beneficia de un ecosistema robusto y maduro, con acceso a una amplia gama de bibliotecas y herramientas.
+                    </FluentCard>
+                </FluentGridItem>
+                <FluentGridItem xs="6" md="4">
+                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
+                        <p>
+                            <img src="assets/productividad.jpeg" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
+                        </p>
+                        <strong>Productividad Mejorada</strong><br> La capacidad de escribir código en C# mejora la productividad en el desarrollo y mantenimiento de aplicaciones, aprovechando el conocimiento existente de .NET.
+                    </FluentCard>
+                </FluentGridItem>
+                <FluentGridItem xs="6" md="4">
+                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
+                        <p>
+                            <img src="assets/seguridad.jpeg" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
+                        </p>
+                        <strong>Rendimiento y Seguridad</strong> <br>Blazor ofrece beneficios de rendimiento, confiabilidad y seguridad inherentes a .NET, garantizando aplicaciones rápidas y seguras.
+                    </FluentCard>
+                </FluentGridItem>
+                <FluentGridItem xs="6" md="4">
+                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
+                        <p>
+                            <img src="assets/trio.png" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
+                        </p>
+                        <strong>Compatibilidad con HTML,CSS y JS</strong><br> Blazor permite crear interfaces de usuario interactivas y modernas utilizando HTML y CSS, asegurando compatibilidad con todos los navegadores.
+                    </FluentCard>
+                </FluentGridItem>
+                <FluentGridItem xs="6" md="4">
+                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
+                    <p>
+                        <img src="assets/tools.jpeg" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
+                    </p>
+                    <strong>Integración con Herramientas Modernas</strong><br> Blazor se integra fácilmente con plataformas de hospedaje modernas como Docker, y herramientas de desarrollo como Visual Studio y Visual Studio Code.    
+                    </FluentCard>
+                </FluentGridItem>
             </FluentGrid>
-            <ul>
-                <li><strong>Único Stack Tecnológico:</strong> Blazor permite desarrollar tanto el frontend como el backend utilizando C#, eliminando la necesidad de aprender múltiples lenguajes y frameworks.</li>
-                <li><strong>Múltiples Modelos de Hospedaje y Renderizado:</strong> Blazor ofrece flexibilidad con modelos de hospedaje como Blazor Server y Blazor WebAssembly, adaptándose a diferentes necesidades y escenarios.</li>
-                <li><strong>Ecosistema Estable y Potente:</strong> Al estar basado en .NET, Blazor se beneficia de un ecosistema robusto y maduro, con acceso a una amplia gama de bibliotecas y herramientas.</li>
-                <li><strong>Productividad Mejorada:</strong> La capacidad de escribir código en C# mejora la productividad en el desarrollo y mantenimiento de aplicaciones, aprovechando el conocimiento existente de .NET.</li>
-                <li><strong>Rendimiento y Seguridad:</strong> Blazor ofrece beneficios de rendimiento, confiabilidad y seguridad inherentes a .NET, garantizando aplicaciones rápidas y seguras.</li>
-                <li><strong>Compatibilidad con HTML y CSS:</strong> Blazor permite crear interfaces de usuario interactivas y modernas utilizando HTML y CSS, asegurando compatibilidad con todos los navegadores.</li>
-                <li><strong>Integración con Herramientas Modernas:</strong> Blazor se integra fácilmente con plataformas de hospedaje modernas como Docker, y herramientas de desarrollo como Visual Studio y Visual Studio Code.</li>
-            </ul>
-            <h4>Con Blazor, puedes construir aplicaciones web interactivas y eficientes, aprovechando todas las ventajas que ofrece el ecosistema .NET.</h4>
+            
+            <h3 style="text-align: center;">Con Blazor, puedes construir aplicaciones web interactivas y eficientes, aprovechando todas las ventajas que ofrece el ecosistema .NET.</h3>
         </FluentCard>
     </section>
 </FluentGridItem>
