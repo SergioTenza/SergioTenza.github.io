@@ -1,16 +1,23 @@
 ﻿ @inject IDialogService DialogService 
  @inject IToastService ToastService
 
-<img src="assets/logo.png" class="img-thumbnail" width="150" alt="Responsive image" style="border-radius: 25px;" />
-<h1>TNZ Servicios Informaticos</h1>
-<h2>Consultoría y Formación Especializada en Blazor y Dotnet</h2>
-<FluentStack HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="150">
-    <img src="assets/blazor-logo-trans.png" class="img-thumbnail" width="100" alt="Responsive image">
-    <img src="assets/dotnet-logo-trans.png" class="img-thumbnail" width="100" alt="Responsive image">
-</FluentStack>
-<h4> Transformamos tus ideas en realidad con soluciones Blazor de alta calidad</h4>
+
+<FluentGrid Spacing="3" AdaptiveRendering="true" Justify="JustifyContent.Center">
+    <FluentGridItem xs="12" Style="display: flex; justify-content: center; align-items: center;">        
+        <img src="assets/logo.png" alt="Responsive image" style="border-radius:25px;max-height:250px;" />        
+    </FluentGridItem>    
+    <h1 style="width:100%;text-align:center;">TNZ Servicios Informaticos</h1>
+    <h2 style="width:100%;text-align:center;">Consultoría y Formación<br>Especializada<br>en <strong style="color: #512BD4;">Blazor</strong> y <strong style="color: #0078D7;">Dotnet</strong></h2>    
+    <FluentGridItem xs="12" Style="display: flex; justify-content: space-evenly; align-items: center;">
+        <img src="assets/blazor-logo-trans.png" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
+        <img src="assets/dotnet-logo-trans.png" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
+    </FluentGridItem>
+    <h2 style="width:100%;text-align:center;">Transformamos tus <br>ideas en realidad<br>con soluciones <strong style="color: #512BD4;">Blazor</strong><br> de alta calidad</h2>
+</FluentGrid>
+ 
 <Services />
-<FluentButton Appearance="Appearance.Accent" Style="margin-top: 20px;" OnClick="@EditAsync">Contáctanos</FluentButton>
+<h3 style="width:100%;text-align:center;">Contáctanos</h3>
+<FluentButton Appearance="Appearance.Accent" Style="min-height:45px;min-width:90px;border-radius:10px;" OnClick="@EditAsync"><FluentIcon Value="@(new Icons.Regular.Size48.Mail())" Color="@Color.Lightweight" /></FluentButton>
 <Vision/>
 <WhyBlazor/>
 <WorkWithUs/>

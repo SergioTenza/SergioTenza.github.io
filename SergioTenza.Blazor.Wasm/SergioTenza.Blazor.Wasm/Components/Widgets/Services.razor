@@ -1,25 +1,29 @@
 ﻿
-<section>
-    <FluentStack Orientation="Orientation.Vertical" HorizontalAlignment="HorizontalAlignment.Center" VerticalAlignment="VerticalAlignment.Center" Width="100%">
-        <h2 style="color:#6A1B9A;">Nuestros Servicios</h2>
-        <h3>Ofrecemos consultoría especializada y formación en Blazor para ayudarte a alcanzar tus objetivos tecnológicos.</h3>
-        <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center" VerticalAlignment="VerticalAlignment.Center" Width="100%">
-            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;height: 15vh;">
-                <p><FluentIcon Value="@(new Icons.Regular.Size48.AppGeneric())" Color="@Color.Lightweight" /></p>
-                <p>Consultoría en Blazor</p>
+<section>    
+    <FluentGrid Spacing="3" AdaptiveRendering="true" Justify="JustifyContent.Center">
+        <FluentGridItem xs="6" md="3">
+            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;min-height:90px;max-height:350px;">
+                <h2><FluentIcon Value="@(new Icons.Regular.Size48.AppGeneric())" Color="@Color.Lightweight" /></h2>
+                <h2>Consultoría en Blazor</h2>
             </FluentCard>
-            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;height: 15vh;">
-                <p><FluentIcon Value="@(new Icons.Regular.Size48.AppFolder())" Color="@Color.Lightweight" /></p>
-                <p>Desarrollo de aplicaciones Blazor</p>
+        </FluentGridItem>
+        <FluentGridItem xs="6" md="3">
+            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;min-height:90px;max-height:350px;">
+                <h2><FluentIcon Value="@(new Icons.Regular.Size48.AppFolder())" Color="@Color.Lightweight" /></h2>
+                <h2>Desarrollo de aplicaciones Blazor</h2>
             </FluentCard>
-            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;height: 15vh;">
-                <p><FluentIcon Value="@(new Icons.Regular.Size48.Apps())" Color="@Color.Lightweight" /></p>
-                <p>Formación y talleres especializados</p>
+        </FluentGridItem>
+        <FluentGridItem xs="6" md="3">
+            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;min-height:90px;max-height:350px;">
+                <h2><FluentIcon Value="@(new Icons.Regular.Size48.Apps())" Color="@Color.Lightweight" /></h2>
+                <h2>Formación y talleres especializados</h2>
             </FluentCard>
-            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;height: 15vh;">
-                <p><FluentIcon Value="@(new Icons.Regular.Size48.Alert())" Color="@Color.Lightweight" /></p>
-                <p>Soporte y mantenimiento</p>
+        </FluentGridItem>
+        <FluentGridItem xs="6" md="3">
+            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;min-height:90px;max-height:350px;">
+                <h2><FluentIcon Value="@(new Icons.Regular.Size48.Alert())" Color="@Color.Lightweight" /></h2>
+                <h2>Soporte y mantenimiento</h2>
             </FluentCard>
-        </FluentStack>
-    </FluentStack>
+        </FluentGridItem>
+    </FluentGrid>
 </section>
