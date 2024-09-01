@@ -1,5 +1,6 @@
 using System;
 using MailKit.Net.Smtp;
+using MailKit.Security;
 using MimeKit;
 
 namespace SergioTenza.Blazor.Wasm.Services;
@@ -18,9 +19,9 @@ public class MailService
         try
         {
             var messageMime = new MimeMessage();
-            messageMime.From.Add(new MailboxAddress(name, sender));
+            messageMime.From.Add(new MailboxAddress(name, _emailSettings.SendEmail));
             messageMime.To.Add(new MailboxAddress(_emailSettings.ToName, _emailSettings.ToEmail));
-            messageMime.Subject = $"{_emailSettings.Subject}  from {name} - {position}";
+            messageMime.Subject = $"{_emailSettings.Subject}: {name} - {position} - {sender}";
 
             messageMime.Body = new TextPart("plain")
             {
