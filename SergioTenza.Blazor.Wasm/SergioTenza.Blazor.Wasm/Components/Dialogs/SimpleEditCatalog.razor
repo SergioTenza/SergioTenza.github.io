@@ -1,4 +1,5 @@
 ﻿@using System.Diagnostics.CodeAnalysis
+@using SergioTenza.Blazor.Wasm.Services
 @implements IDialogContentComponent<SimpleEditCatalog.RegisterContent>
 
 
@@ -102,7 +103,7 @@
     private async Task SaveAsync()
     {
         var mailService = new MailService();
-        var sended = await mailService.SendMail(Content.Email, Content.Comments, Content.Name, Constent.Position);
+        var sended = await mailService.SendMailNotification(Content.Email, Content.Comments, Content.Name, Content.Position);
         if (sended)
         {
             await Dialog.CloseAsync(Content);
