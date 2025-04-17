@@ -8,24 +8,10 @@
             <div class="cta-cards">
                 <div class="contact-card">
                     <div class="contact-card-header">
-                        <span class="contact-icon">📞</span>
-                        <h3>Llámanos</h3>
-                    </div>
-                    <p>Habla directamente con uno de nuestros consultores para resolver tus dudas.</p>
-                    <a href="tel:+34600000000" class="contact-link">
-                        <button class="contact-button contact-button-secondary">
-                            <span class="icon">📞</span>
-                            +34 600 000 000
-                        </button>
-                    </a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-card-header">
                         <span class="contact-icon">📅</span>
                         <h3>Agenda una reunión</h3>
                     </div>
-                    <p>Reserva una videollamada con nuestro equipo para discutir tu proyecto.</p>
+                    <p>Reserva una videollamada con nuestro equipo para discutir tu proyecto y descubrir cómo podemos ayudarte.</p>
                     <a href="mailto:info@tnzservicios.es" class="contact-link">
                         <button class="contact-button contact-button-secondary">
                             <span class="icon">📅</span>
@@ -36,16 +22,13 @@
             </div>
 
             <div class="social-links">
-                <p>Síguenos en redes sociales:</p>
+                <p>Sígueme en redes sociales:</p>
                 <div class="social-icons">
-                    <a href="https://twitter.com/tnzservicios" target="_blank" class="social-icon">
-                        <span class="social-icon-symbol">🐦</span>
+                    <a href="https://linkedin.com/in/sergio-tenza-lopez-b9766890" target="_blank" class="social-icon linkedin-icon">
+                        <img src="assets/InBug-White.png" alt="LinkedIn" class="social-icon-image">
                     </a>
-                    <a href="https://linkedin.com/company/tnzservicios" target="_blank" class="social-icon">
-                        <span class="social-icon-symbol">🔗</span>
-                    </a>
-                    <a href="https://github.com/tnzservicios" target="_blank" class="social-icon">
-                        <span class="social-icon-symbol">💻</span>
+                    <a href="https://github.com/SergioTenza" target="_blank" class="social-icon github-icon">
+                        <img src="assets/github-mark.png" alt="GitHub" class="social-icon-image">
                     </a>
                 </div>
             </div>
@@ -141,10 +124,11 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         display: flex;
         flex-direction: column;
-        flex: 1 1 300px;
-        max-width: 400px;
+        flex: 0 1 500px;
+        max-width: 500px;
         height: 100%;
         border: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 0 auto;
     }
 
     .contact-card:hover {
@@ -264,8 +248,20 @@
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     }
 
-    .social-icon-symbol {
-        font-size: 1.5rem;
+    .social-icon-image {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+    }
+
+    .linkedin-icon {
+        background-color: #0077B5;
+        border-color: #0077B5;
+    }
+
+    .github-icon {
+        background-color: white;
+        border-color: #333;
     }
 
     .icon {
@@ -365,8 +361,9 @@
             height: 40px;
         }
 
-        .social-icon-symbol {
-            font-size: 1.2rem;
+        .social-icon-image {
+            width: 25px;
+            height: 25px;
         }
     }
 </style>

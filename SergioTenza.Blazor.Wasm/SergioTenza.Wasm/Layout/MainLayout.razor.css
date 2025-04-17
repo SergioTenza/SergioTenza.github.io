@@ -8,23 +8,53 @@ main {
     flex: 1;
 }
 
-.sidebar {
-    background-image: linear-gradient(180deg, #512BD4 0%, #6A1B9A 70%);
-}
+/* Sidebar removed */
 
 .top-row {
     background-color: #f7f7f7;
     border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
+    justify-content: space-between;
+    height: 4rem;
     display: flex;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0 1rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #512BD4;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.github-link {
+    margin-left: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #512BD4;
+    color: white !important;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.github-link:hover {
+    background-color: #6A1B9A;
+    text-decoration: none !important;
 }
 
     .top-row ::deep a, .top-row ::deep .btn-link {
         white-space: nowrap;
-        margin-left: 1.5rem;
         text-decoration: none;
         color: #512BD4;
         font-weight: 500;
@@ -39,26 +69,33 @@ main {
         text-overflow: ellipsis;
     }
 
-@media (max-width: 640.98px) {
+@media (max-width: 768px) {
     .top-row {
-        justify-content: space-between;
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .top-row ::deep a, .top-row ::deep .btn-link {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+
+    .github-link {
         margin-left: 0;
     }
 }
 
 @media (min-width: 641px) {
     .page {
-        flex-direction: row;
-    }
-
-    .sidebar {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
+        flex-direction: column;
     }
 
     .top-row {
@@ -74,7 +111,7 @@ main {
     }
 
     .top-row, article {
-        padding-left: 2rem !important;
+        padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
     }
 }
