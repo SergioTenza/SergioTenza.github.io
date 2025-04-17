@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "SergioTenza.Wasm",
   "resources": {
-    "hash": "sha256-zVYzKjF8aK1oBVQZ5gzh35E9WlFj1JCCXwhyGEteCUs=",
+    "hash": "sha256-uA7Q3JVcRP1rAlCRWeuZGmaj/t5SmJCxElVu2mdWd5A=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.3z8oblhzhw.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.2yj94ckvak.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -17,7 +17,7 @@
       "Microsoft.Extensions.Primitives.2t6a8ek1ml.wasm": "Microsoft.Extensions.Primitives.wasm",
       "Microsoft.JSInterop.osc8jgovue.wasm": "Microsoft.JSInterop.wasm",
       "Microsoft.JSInterop.WebAssembly.lsljofql11.wasm": "Microsoft.JSInterop.WebAssembly.wasm",
-      "SergioTenza.Wasm.uqpsii76dx.wasm": "SergioTenza.Wasm.wasm",
+      "SergioTenza.Wasm.aszo6q7vwr.wasm": "SergioTenza.Wasm.wasm",
       "System.Collections.Concurrent.upxfk4jomb.wasm": "System.Collections.Concurrent.wasm",
       "System.Collections.Immutable.7oac2enbtr.wasm": "System.Collections.Immutable.wasm",
       "System.Collections.hql9bbg5yj.wasm": "System.Collections.wasm",
@@ -78,7 +78,7 @@
       "Microsoft.Extensions.Primitives.2t6a8ek1ml.wasm": "sha256-9sBOSpmqVgdkfoIHyEZ5pl7+xVNmC6ndBL6zcSGBAf8=",
       "Microsoft.JSInterop.osc8jgovue.wasm": "sha256-yGWwokByYCIKRAlAW9aO0D6mYytcYnjvgXWf/gtKLls=",
       "Microsoft.JSInterop.WebAssembly.lsljofql11.wasm": "sha256-63bzxZLVvNOmTsso6iLrptxGmKBQh2HUIEGtPUrRPeQ=",
-      "SergioTenza.Wasm.uqpsii76dx.wasm": "sha256-qsT+2EV7GfXOiLgi9OAJaqgsapVL7FAfX1vsbpxZ26c=",
+      "SergioTenza.Wasm.aszo6q7vwr.wasm": "sha256-Kmmv3EGeUhhgOY9XxqkYI4hLPzXJQactZJgm1WLJQOY=",
       "System.Collections.Concurrent.upxfk4jomb.wasm": "sha256-cqzcHSwS9ehagxX+t9ixAOyXAEOHC3JHlwzyakXTtbU=",
       "System.Collections.Immutable.7oac2enbtr.wasm": "sha256-ByvRqlpAmo07/foIU80M/bRxMsoGweaCwNUMZAY2HZI=",
       "System.Collections.hql9bbg5yj.wasm": "sha256-t/JjK6y+bZPCLM7DKx2W/kMDT1U3lzBL4gtXPe3QmXM=",
