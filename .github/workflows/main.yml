@@ -24,21 +24,21 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      
+
        # Setup .NET Core SDK 6.0
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v3.0.1
         with:
           dotnet-version: 8.0
-        
+
       # Runs a single command using the runners shell
       - name: Publish .NET Core Project
-        run: dotnet publish SergioTenza.Blazor.Wasm/SergioTenza.Blazor.Wasm/SergioTenza.Blazor.Wasm.csproj -c Release -o release --nologo
-      
+        run: dotnet publish SergioTenza.Blazor.Wasm/SergioTenza.Wasm/SergioTenza.Wasm.csproj -c Release -o release --nologo
+
       # add .nojekyll file
       - name : Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
-      
+
       # Deploy to github pages
       - name: Deploy to github pages wwwroot
         uses: JamesIves/github-pages-deploy-action@v4.4.0
@@ -46,6 +46,6 @@ jobs:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: release/wwwroot
-          
-      
-      
+
+
+
