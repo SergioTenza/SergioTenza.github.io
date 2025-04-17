@@ -6,11 +6,100 @@
 
     <main>
         <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            <a href="https://github.com/SergioTenza/SergioTenza.github.io" target="_blank">GitHub</a>
         </div>
 
-        <article class="content px-4">
+        <article class="content">
             @Body
         </article>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <span class="footer-logo-text">TNZ Servicios Informaticos</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#servicios">Servicios</a>
+                        <a href="#why-blazor">¿Por qué Blazor?</a>
+                        <a href="#vision">Nuestra Visión</a>
+                        <a href="#why-us">¿Por qué nosotros?</a>
+                        <a href="#contact">Contacto</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; @DateTime.Now.Year TNZ Servicios Informaticos. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
     </main>
 </div>
+
+<style>
+    .footer {
+        background-color: #333;
+        color: white;
+        padding: 3rem 0 1rem;
+        margin-top: 4rem;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+
+    .footer-logo {
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .footer-links a {
+        color: #ddd;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .footer-bottom {
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 0.9rem;
+        color: #aaa;
+    }
+
+    @@media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-links {
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+    }
+</style>

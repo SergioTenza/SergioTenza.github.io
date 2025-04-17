@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Deploy Blazor
+name: Deploy Blazor WebAssembly
 
 # Controls when the workflow will run
 on:
@@ -23,13 +23,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
        # Setup .NET Core SDK 6.0
       - name: Setup .NET Core SDK
-        uses: actions/setup-dotnet@v3.0.1
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0
+          dotnet-version: 9.0
 
       # Runs a single command using the runners shell
       - name: Publish .NET Core Project

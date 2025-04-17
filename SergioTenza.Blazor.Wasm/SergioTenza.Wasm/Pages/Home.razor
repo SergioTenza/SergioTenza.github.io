@@ -1,7 +1,56 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>TNZ Servicios Informaticos - Consultoría y Formación Especializada en Blazor y Dotnet</PageTitle>
 
-<h1>Hello, world!</h1>
+<main class="main-content">
+    <!-- Hero Section -->
+    <SergioTenza.Wasm.Widgets.LandingHeader/>
 
-Welcome to your new app.
+    <!-- Services Section -->
+    <section id="servicios" class="page-section">
+        <SergioTenza.Wasm.Widgets.Services/>
+    </section>
+
+    <!-- Why Blazor Section -->
+    <section id="why-blazor" class="page-section">
+        <SergioTenza.Wasm.Widgets.WhyBlazor/>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="page-section">
+        <SergioTenza.Wasm.Widgets.Vision/>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="page-section">
+        <SergioTenza.Wasm.Widgets.WorkWithUs/>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="page-section">
+        <SergioTenza.Wasm.Widgets.CallToAction/>
+    </section>
+</main>
+
+<style>
+    .main-content {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .page-section {
+        width: 100%;
+        scroll-margin-top: 80px; /* For smooth scrolling to sections */
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @@media (max-width: 768px) {
+        .page-section {
+            scroll-margin-top: 60px;
+        }
+    }
+</style>

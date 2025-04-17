@@ -1,0 +1,284 @@
+<div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-grid">
+            <div class="hero-logo-container">
+                <img src="assets/logo.png" alt="TNZ Servicios Informaticos Logo" class="hero-logo" />
+            </div>
+            <div class="hero-text-container">
+                <h1 class="hero-title">TNZ Servicios Informaticos</h1>
+                <h2 class="hero-subtitle">Expertos en <strong style="color: #512BD4;">Blazor</strong> y <strong style="color: #0078D7;">Dotnet</strong></h2>
+                <p class="hero-description">Ofrecemos consultoría especializada, desarrollo a medida y formación para empresas que buscan soluciones digitales de alta calidad.</p>
+                <div class="hero-cta">
+                    <a href="#servicios" class="secondary-cta-link">
+                        <button class="secondary-cta-button">
+                            Ver servicios
+                            <span class="icon">↓</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-badges">
+            <div class="tech-badge">
+                <img src="assets/blazor-logo.png" alt="Blazor Logo" class="tech-logo">
+                <span>Blazor</span>
+            </div>
+            <div class="tech-badge">
+                <img src="assets/dotnet-logo.png" alt="Dotnet Logo" class="tech-logo">
+                <span>.NET</span>
+            </div>
+            <div class="tech-badge">
+                <span class="icon">&#128187;</span>
+                <span>Web</span>
+            </div>
+            <div class="tech-badge">
+                <span class="icon">&#128187;</span>
+                <span>Desktop</span>
+            </div>
+            <div class="tech-badge">
+                <span class="icon">&#128241;</span>
+                <span>Mobile</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hero-section {
+        position: relative;
+        padding: 4rem 0 2rem;
+        text-align: left;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        border-radius: 0 0 30px 30px;
+        overflow: hidden;
+        margin-bottom: 3rem;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0 L50 0 L0 50 Z" fill="%23512BD410"/><path d="M100 0 L100 50 L50 0 Z" fill="%230078D710"/><path d="M0 100 L0 50 L50 100 Z" fill="%230078D710"/><path d="M100 100 L50 100 L100 50 Z" fill="%23512BD410"/></svg>');
+        background-size: 100px 100px;
+        opacity: 0.5;
+        z-index: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .hero-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .hero-logo-container {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-text-container {
+        flex: 1 1 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-logo {
+        border-radius: 15px;
+        max-height: 180px;
+        width: auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-logo:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #333;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #444;
+        line-height: 1.3;
+    }
+
+    .hero-description {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: #555;
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+    .hero-cta {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .secondary-cta-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 1.1rem;
+        border-radius: 30px;
+        color: #512BD4;
+        background-color: transparent;
+        border: 1px solid #512BD4;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .secondary-cta-button:hover {
+        background-color: rgba(81, 43, 212, 0.05);
+    }
+
+    .secondary-cta-link {
+        text-decoration: none;
+    }
+
+    .tech-badges {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        margin: 2rem 0 0;
+        flex-wrap: wrap;
+        padding: 1.5rem;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .tech-badge {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .tech-logo {
+        max-height: 50px;
+        transition: transform 0.3s ease;
+    }
+
+    .tech-badge span {
+        font-weight: 600;
+        color: #444;
+    }
+
+    .tech-badge:hover .tech-logo {
+        transform: scale(1.1);
+    }
+
+    .icon {
+        font-size: 1.2rem;
+    }
+
+    @@media (max-width: 768px) {
+        .hero-section {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .hero-logo {
+            max-height: 150px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.6rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            justify-content: center;
+        }
+
+        .tech-badges {
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .tech-logo {
+            max-height: 40px;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .hero-section {
+            padding: 2rem 0 1.5rem;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .hero-logo {
+            max-height: 120px;
+        }
+
+        .hero-title {
+            font-size: 1.8rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+        }
+
+        .secondary-cta-button {
+            width: 100%;
+            font-size: 1rem;
+            padding: 0.6rem 1.2rem;
+        }
+
+        .tech-badges {
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tech-logo {
+            max-height: 35px;
+        }
+
+        .tech-badge span {
+            font-size: 0.8rem;
+        }
+    }
+</style>
