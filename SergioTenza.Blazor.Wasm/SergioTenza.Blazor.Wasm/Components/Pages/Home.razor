@@ -1,11 +1,56 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>TNZ Servicios Informaticos - Consultoría y Formación Especializada en Blazor y Dotnet</PageTitle>
 
-<section>
-    <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Top" HorizontalAlignment="HorizontalAlignment.Center" Width="100%" Style="margin-top: 30px;height: 85vh;padding-inline: 5px;" HorizontalGap="5">
-        <LandingHeader/>        
+<main class="main-content">
+    <!-- Hero Section -->
+    <LandingHeader/>
+
+    <!-- Services Section -->
+    <section id="servicios" class="page-section">
+        <Services/>
+    </section>
+
+    <!-- Why Blazor Section -->
+    <section id="why-blazor" class="page-section">
+        <WhyBlazor/>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="page-section">
+        <Vision/>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="page-section">
+        <WorkWithUs/>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="page-section">
         <CallToAction/>
-    </FluentStack>
-</section>
- 
+    </section>
+</main>
+
+<style>
+    .main-content {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .page-section {
+        width: 100%;
+        scroll-margin-top: 80px; /* For smooth scrolling to sections */
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @@media (max-width: 768px) {
+        .page-section {
+            scroll-margin-top: 60px;
+        }
+    }
+</style>

@@ -1,14 +1,414 @@
-﻿ @inject IDialogService DialogService
- @inject IToastService ToastService
+﻿@inject IDialogService DialogService
+@inject IToastService ToastService
 
+<section id="contact" class="cta-section">
+    <div class="cta-background"></div>
+    <div class="cta-container">
+        <div class="cta-content">
+            <h2 class="cta-title">¿Listo para impulsar tu proyecto con Blazor?</h2>
+            <p class="cta-text">Contáctanos hoy para una consulta gratuita y descubre cómo podemos ayudarte a transformar tus ideas en soluciones digitales de alta calidad con Blazor y .NET.</p>
 
-<section>
-    <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center">
-        <h2>¿Listo para Empezar?</h2>
-        <p>Contáctanos hoy para una consulta gratuita y descubre cómo podemos ayudarte.</p>
-        <FluentButton Appearance="Appearance.Accent" Style="margin-top: 20px;" OnClick="@EditAsync">Contáctanos hoy</FluentButton>
-    </FluentStack>
+            <div class="cta-cards">
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <FluentIcon Value="@(new Icons.Regular.Size32.Mail())" Color="@Color.Accent" />
+                        <h3>Envíanos un mensaje</h3>
+                    </div>
+                    <p>Completa nuestro formulario de contacto y te responderemos en menos de 24 horas.</p>
+                    <FluentButton Appearance="Appearance.Neutral" Class="contact-button contact-button-primary" OnClick="@EditAsync">
+                        <FluentIcon Value="@(new Icons.Regular.Size20.Chat())" Slot="start" />
+                        Contactar ahora
+                    </FluentButton>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <FluentIcon Value="@(new Icons.Regular.Size32.Phone())" Color="@Color.Accent" />
+                        <h3>Llámanos</h3>
+                    </div>
+                    <p>Habla directamente con uno de nuestros consultores para resolver tus dudas.</p>
+                    <a href="tel:+34600000000" class="contact-link">
+                        <FluentButton Appearance="Appearance.Neutral" Class="contact-button contact-button-secondary">
+                            <FluentIcon Value="@(new Icons.Regular.Size20.PhoneArrowRight())" Slot="start" />
+                            +34 600 000 000
+                        </FluentButton>
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-header">
+                        <FluentIcon Value="@(new Icons.Regular.Size32.CalendarLtr())" Color="@Color.Accent" />
+                        <h3>Agenda una reunión</h3>
+                    </div>
+                    <p>Reserva una videollamada con nuestro equipo para discutir tu proyecto.</p>
+                    <a href="mailto:info@tnzservicios.es" class="contact-link">
+                        <FluentButton Appearance="Appearance.Neutral" Class="contact-button contact-button-secondary">
+                            <FluentIcon Value="@(new Icons.Regular.Size20.CalendarAdd())" Slot="start" />
+                            Agendar reunión
+                        </FluentButton>
+                    </a>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <p>Síguenos en redes sociales:</p>
+                <div class="social-icons">
+                    <a href="https://twitter.com/tnzservicios" target="_blank" class="social-icon">
+                        <FluentIcon Value="@(new Icons.Regular.Size24.Chat())" />
+                    </a>
+                    <a href="https://linkedin.com/company/tnzservicios" target="_blank" class="social-icon">
+                        <FluentIcon Value="@(new Icons.Regular.Size24.Link())" />
+                    </a>
+                    <a href="https://github.com/tnzservicios" target="_blank" class="social-icon">
+                        <FluentIcon Value="@(new Icons.Regular.Size24.Code())" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
+<style>
+    .cta-section {
+        padding: 5rem 0;
+        position: relative;
+        color: white;
+        border-radius: 20px;
+        margin: 5rem 0;
+        overflow: hidden;
+    }
+
+    .cta-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, #3700B3 0%, #5A0099 100%); /* Gradiente más oscuro para mejor contraste */
+        z-index: -1;
+    }
+
+    .cta-background:before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .cta-background:after {
+        content: '';
+        position: absolute;
+        bottom: -100px;
+        left: -100px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .cta-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .cta-content {
+        text-align: center;
+    }
+
+    .cta-title {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-text {
+        font-size: 1.3rem;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .contact-card {
+        background-color: rgba(0, 0, 0, 0.2); /* Fondo más oscuro para mejor contraste */
+        border-radius: 15px;
+        padding: 2rem;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    }
+
+    .contact-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.25); /* Ligeramente más oscuro al hacer hover */
+        border-color: rgba(255, 255, 255, 0.2); /* Borde más visible al hacer hover */
+    }
+
+    .contact-card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-card-header h3 {
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .contact-card p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        flex-grow: 1;
+    }
+
+    .contact-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border: 2px solid;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Estilo para el botón principal */
+    :deep(.contact-button-primary) {
+        background-color: #FFEB3B; /* Amarillo brillante para máximo contraste */
+        color: #000000; /* Texto negro para máximo contraste */
+        border: 3px solid #000000; /* Borde negro para más contraste */
+        font-weight: 800;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        text-transform: uppercase; /* Texto en mayúsculas para mejor legibilidad */
+        letter-spacing: 1px;
+    }
+
+    :deep(.contact-button-primary:hover) {
+        background-color: #FFF176; /* Amarillo ligeramente más claro al hacer hover */
+        border-color: #000000;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Aseguramos que el texto del botón principal sea siempre negro */
+    :deep(.contact-button-primary span) {
+        color: #000000 !important;
+        font-weight: 800 !important;
+    }
+
+    /* Aseguramos que los iconos del botón principal sean negros */
+    :deep(.contact-button-primary fluent-icon) {
+        color: #000000 !important;
+        fill: #000000 !important;
+    }
+
+    /* Estilo para los botones secundarios */
+    :deep(.contact-button-secondary) {
+        background-color: white; /* Fondo blanco sólido */
+        color: #000000; /* Texto negro para máximo contraste */
+        border: 3px solid #000000; /* Borde negro para más contraste */
+        font-weight: 700;
+        text-transform: uppercase; /* Texto en mayúsculas para mejor legibilidad */
+        letter-spacing: 1px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    :deep(.contact-button-secondary:hover) {
+        background-color: #f0f0f0;
+        border-color: #000000;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Aseguramos que el texto de los botones secundarios sea siempre negro */
+    :deep(.contact-button-secondary span) {
+        color: #000000 !important;
+        font-weight: 700 !important;
+    }
+
+    /* Aseguramos que los iconos de los botones secundarios sean negros */
+    :deep(.contact-button-secondary fluent-icon) {
+        color: #000000 !important;
+        fill: #000000 !important;
+    }
+
+    .contact-link {
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .social-links {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .social-links p {
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #FFEB3B; /* Amarillo brillante para máximo contraste */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000000; /* Negro para máximo contraste */
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border: 2px solid #FFEB3B;
+    }
+
+    .social-icon:hover {
+        transform: translateY(-5px);
+        background-color: #FFF176; /* Amarillo más claro al hacer hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Aseguramos que los iconos sean negros */
+    :deep(.social-icon svg) {
+        fill: #000000 !important;
+        color: #000000 !important;
+    }
+
+    @@media (max-width: 992px) {
+        .cta-cards {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .cta-section {
+            padding: 4rem 0;
+            border-radius: 15px;
+        }
+
+        .cta-title {
+            font-size: 2.2rem;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-card {
+            padding: 1.5rem;
+        }
+
+        .contact-card-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .contact-card p {
+            font-size: 1rem;
+        }
+
+        .contact-button {
+            padding: 0.7rem 1.2rem;
+            font-size: 1rem;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .cta-section {
+            padding: 3rem 0;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+
+        .cta-title {
+            font-size: 1.8rem;
+        }
+
+        .cta-text {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-cards {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            padding: 1.2rem;
+        }
+
+        .contact-card-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .contact-card p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-button {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .social-links p {
+            font-size: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
 
 
 @code {

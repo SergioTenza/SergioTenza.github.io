@@ -4,76 +4,182 @@
 @inject MailService mailService
 
 <!-- Header -->
-<FluentDialogHeader ShowDismiss="true">
+<FluentDialogHeader ShowDismiss="true" Class="contact-dialog-header">
     <FluentStack VerticalAlignment="VerticalAlignment.Center">
-        <FluentIcon Value="@(new Icons.Regular.Size24.WindowApps())" />
-        <FluentLabel Typo="Typography.PaneHeader">
+        <FluentIcon Value="@(new Icons.Regular.Size24.Mail())" Class="dialog-icon" />
+        <FluentLabel Typo="Typography.PaneHeader" Class="dialog-title">
             @Dialog.Instance.Parameters.Title
         </FluentLabel>
     </FluentStack>
 </FluentDialogHeader>
 
 <!-- Body -->
-<FluentDialogBody>
-    <EditForm EditContext="@Context" FormName="ContactForm" novalidate>
-        <DataAnnotationsValidator />
-        <div style="color: var(--error);">
-            <FluentValidationSummary />
-        </div>
-        <FluentStack Orientation="Orientation.Horizontal">
-            <FluentStack Orientation="Orientation.Vertical">
-                <FluentTextField Name="ContactForm.Name" @bind-Value="@Content.Name" Label="Nombre" Required />
-                <FluentValidationMessage For="@(() => Content.Name)" />
-                <FluentTextField Name="ContactForm.Email" @bind-Value="@Content.Email" Label="Email" Required />
-                <FluentValidationMessage For="@(() => Content.Email)" />
-                <FluentTextField Name="ContactForm.Position" @bind-Value="@Content.Position" Label="Posicion"
-                    Required />
-                <FluentValidationMessage For="@(() => Content.Position)" />
+<FluentDialogBody Class="contact-dialog-body">
+    <div class="contact-form-container">
+        <p class="contact-intro">Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
 
-                <FluentTextArea Name="ContactForm.Comments" @bind-Value="@Content.Comments"
-                    Label="En que podriamos ayudarte?" Style="width:100%;" />
-                <FluentValidationMessage For="@(() => Content.Comments)" />
-            </FluentStack>
-            @* <FluentDivider Style="margin: 10px;" Orientation="Orientation.Vertical" />
-            <FluentStack Orientation="Orientation.Vertical" Style="height: 100%">
-            <FluentLabel Style="margin-bottom: 16px;">
-            Si prefieres que nos pongamos en contacto contigo por telefono agenda una llamada con nosotros.
-            </FluentLabel>
-            <FluentTextField Name="ContactForm.Telephone"
-            @bind-Value="@Content.Telephone"
-            Label="Telefono"
-            Required />
-            <FluentValidationMessage For="@(() => Content.Telephone)" />
-            <FluentDatePicker Name="ContactForm.Date"
-            DisabledDateFunc="@DisabledDate"
-            @bind-PickerMonth="@PickerDay"
-            @bind-Value="@Content.Date"
-            Label="Elige tu dia laborable preferido"
-            Required/>
-            <FluentValidationMessage For="@(() => Content.Date)" />
-            <FluentTimePicker Name="ContactForm.Time"
-            @bind-Value="@Content.Time"
-            Label="Hora para contactar:"
-            Required/>
-            <FluentValidationMessage For="@(() => Content.Time)" />
-            </FluentStack> *@
-        </FluentStack>
+        <EditForm EditContext="@Context" FormName="ContactForm" novalidate Class="contact-form">
+            <DataAnnotationsValidator />
+            <div class="validation-summary">
+                <FluentValidationSummary />
+            </div>
 
+            <div class="form-fields">
+                <div class="form-field">
+                    <FluentTextField Name="ContactForm.Name" @bind-Value="@Content.Name" Label="Nombre" Required Class="input-field" />
+                    <FluentValidationMessage For="@(() => Content.Name)" Class="validation-message" />
+                </div>
 
-        <FluentDivider Style="margin: 10px;" Orientation="Orientation.Horizontal" />
+                <div class="form-field">
+                    <FluentTextField Name="ContactForm.Email" @bind-Value="@Content.Email" Label="Email" Required Class="input-field" />
+                    <FluentValidationMessage For="@(() => Content.Email)" Class="validation-message" />
+                </div>
 
-    </EditForm>
+                <div class="form-field">
+                    <FluentTextField Name="ContactForm.Position" @bind-Value="@Content.Position" Label="Cargo o Posición" Required Class="input-field" />
+                    <FluentValidationMessage For="@(() => Content.Position)" Class="validation-message" />
+                </div>
+
+                <div class="form-field">
+                    <FluentTextArea Name="ContactForm.Comments" @bind-Value="@Content.Comments" Label="¿En qué podríamos ayudarte?" Class="textarea-field" Rows="5" />
+                    <FluentValidationMessage For="@(() => Content.Comments)" Class="validation-message" />
+                </div>
+            </div>
+        </EditForm>
+    </div>
 </FluentDialogBody>
 
 <!-- Footer -->
-<FluentDialogFooter>
-    <FluentDivider Style="margin: 10px;" Orientation="Orientation.Horizontal" />
-    <FluentButton Appearance="Appearance.Accent" OnClick="SaveAsync" Disabled="@(!Context.Validate())">Enviar
-    </FluentButton>
-    <FluentButton Appearance="Appearance.Neutral" OnClick="@CancelAsync">
-        Cancel
-    </FluentButton>
+<FluentDialogFooter Class="contact-dialog-footer">
+    <div class="footer-content">
+        <FluentButton Appearance="Appearance.Accent" OnClick="SaveAsync" Disabled="@(!Context.Validate())" Class="submit-button">
+            <FluentIcon Value="@(new Icons.Regular.Size20.Send())" Slot="start" />
+            Enviar mensaje
+        </FluentButton>
+
+        <FluentButton Appearance="Appearance.Neutral" OnClick="@CancelAsync" Class="cancel-button">
+            Cancelar
+        </FluentButton>
+    </div>
 </FluentDialogFooter>
+
+<style>
+    .contact-dialog-header {
+        padding: 1.5rem;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    .dialog-icon {
+        color: #512BD4;
+        margin-right: 0.5rem;
+    }
+
+    .dialog-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .contact-dialog-body {
+        padding: 1.5rem;
+    }
+
+    .contact-form-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .contact-intro {
+        margin-bottom: 1.5rem;
+        color: #555;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .validation-summary {
+        color: var(--error);
+        margin-bottom: 1rem;
+    }
+
+    .form-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .form-field {
+        width: 100%;
+    }
+
+    .input-field, .textarea-field {
+        width: 100%;
+    }
+
+    .validation-message {
+        margin-top: 0.25rem;
+        font-size: 0.9rem;
+    }
+
+    .contact-dialog-footer {
+        padding: 1.5rem;
+        border-top: 1px solid #eaeaea;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .submit-button {
+        min-width: 150px;
+    }
+
+    .cancel-button {
+        min-width: 100px;
+    }
+
+    @@media (max-width: 768px) {
+        .contact-dialog-header,
+        .contact-dialog-body,
+        .contact-dialog-footer {
+            padding: 1rem;
+        }
+
+        .dialog-title {
+            font-size: 1.3rem;
+        }
+
+        .contact-intro {
+            font-size: 1rem;
+        }
+
+        .form-fields {
+            gap: 1rem;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .dialog-title {
+            font-size: 1.2rem;
+        }
+
+        .footer-content {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .submit-button,
+        .cancel-button {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+    }
+</style>
 
 @code
 {
@@ -101,7 +207,7 @@
     }
 
     private async Task SaveAsync()
-    {        
+    {
         var sended = mailService.SendMailNotification(Content.Email, Content.Comments, Content.Name, Content.Position);
         if (sended.success)
         {

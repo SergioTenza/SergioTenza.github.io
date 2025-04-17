@@ -1,29 +1,335 @@
-﻿
-<section>    
-    <FluentGrid Spacing="3" AdaptiveRendering="true" Justify="JustifyContent.Center">
-        <FluentGridItem xs="6" md="3">
-            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;min-height:90px;max-height:350px;">
-                <h2><FluentIcon Value="@(new Icons.Regular.Size48.AppGeneric())" Color="@Color.Lightweight" /></h2>
-                <h2>Consultoría en Blazor</h2>
-            </FluentCard>
-        </FluentGridItem>
-        <FluentGridItem xs="6" md="3">
-            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;min-height:90px;max-height:350px;">
-                <h2><FluentIcon Value="@(new Icons.Regular.Size48.AppFolder())" Color="@Color.Lightweight" /></h2>
-                <h2>Desarrollo de aplicaciones Blazor</h2>
-            </FluentCard>
-        </FluentGridItem>
-        <FluentGridItem xs="6" md="3">
-            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;min-height:90px;max-height:350px;">
-                <h2><FluentIcon Value="@(new Icons.Regular.Size48.Apps())" Color="@Color.Lightweight" /></h2>
-                <h2>Formación y talleres especializados</h2>
-            </FluentCard>
-        </FluentGridItem>
-        <FluentGridItem xs="6" md="3">
-            <FluentCard Style="background-color: #6A1B9A; color:white;text-align:center;min-height:90px;max-height:350px;">
-                <h2><FluentIcon Value="@(new Icons.Regular.Size48.Alert())" Color="@Color.Lightweight" /></h2>
-                <h2>Soporte y mantenimiento</h2>
-            </FluentCard>
-        </FluentGridItem>
-    </FluentGrid>
+﻿<section id="servicios" class="services-container">
+    <div class="services-header">
+        <h2 class="services-title">Nuestros Servicios</h2>
+        <p class="services-subtitle">Ofrecemos soluciones completas para empresas que buscan aprovechar el poder de Blazor y .NET</p>
+    </div>
+
+    <div class="services-grid">
+        <FluentGrid Spacing="3" AdaptiveRendering="true" Justify="JustifyContent.Center">
+            <FluentGridItem xs="12" sm="6" lg="3">
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <FluentIcon Value="@(new Icons.Regular.Size48.AppGeneric())" Color="@Color.Lightweight" Class="service-icon" />
+                    </div>
+                    <h3 class="service-title">Consultoría en Blazor</h3>
+                    <p class="service-description">Asesoramiento experto para implementar soluciones Blazor en tu empresa. Evaluamos tus necesidades y te guiamos en la adopción de la tecnología adecuada.</p>
+                    <ul class="service-features">
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Evaluación de necesidades</li>
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Arquitectura de soluciones</li>
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Optimización de rendimiento</li>
+                    </ul>
+                </div>
+            </FluentGridItem>
+
+            <FluentGridItem xs="12" sm="6" lg="3">
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <FluentIcon Value="@(new Icons.Regular.Size48.AppFolder())" Color="@Color.Lightweight" Class="service-icon" />
+                    </div>
+                    <h3 class="service-title">Desarrollo de aplicaciones</h3>
+                    <p class="service-description">Creamos aplicaciones Blazor a medida para tus necesidades empresariales, desde aplicaciones web hasta soluciones híbridas.</p>
+                    <ul class="service-features">
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Aplicaciones web interactivas</li>
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Soluciones empresariales</li>
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Integración con sistemas existentes</li>
+                    </ul>
+                </div>
+            </FluentGridItem>
+
+            <FluentGridItem xs="12" sm="6" lg="3">
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <FluentIcon Value="@(new Icons.Regular.Size48.Apps())" Color="@Color.Lightweight" Class="service-icon" />
+                    </div>
+                    <h3 class="service-title">Formación especializada</h3>
+                    <p class="service-description">Talleres y cursos personalizados para que tu equipo domine Blazor y .NET, adaptados a diferentes niveles de experiencia.</p>
+                    <ul class="service-features">
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Cursos para principiantes</li>
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Formación avanzada</li>
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Talleres prácticos</li>
+                    </ul>
+                </div>
+            </FluentGridItem>
+
+            <FluentGridItem xs="12" sm="6" lg="3">
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <FluentIcon Value="@(new Icons.Regular.Size48.Alert())" Color="@Color.Lightweight" Class="service-icon" />
+                    </div>
+                    <h3 class="service-title">Soporte y mantenimiento</h3>
+                    <p class="service-description">Asistencia continua para mantener tus aplicaciones funcionando perfectamente, con actualizaciones y mejoras periódicas.</p>
+                    <ul class="service-features">
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Soporte técnico</li>
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Actualizaciones de seguridad</li>
+                        <li><FluentIcon Value="@(new Icons.Regular.Size16.CheckmarkCircle())" Color="@Color.Success" /> Mejoras continuas</li>
+                    </ul>
+                </div>
+            </FluentGridItem>
+        </FluentGrid>
+    </div>
+
+    <div class="services-cta">
+        <p class="services-cta-text">¿Necesitas una solución personalizada para tu empresa?</p>
+        <FluentButton Appearance="Appearance.Accent" OnClick="@OnContactClick" Class="services-cta-button">
+            <FluentIcon Value="@(new Icons.Regular.Size20.Chat())" Slot="start" />
+            Solicitar información
+        </FluentButton>
+    </div>
 </section>
+
+<style>
+    .services-container {
+        padding: 4rem 0;
+        background-color: #f9f9f9;
+        border-radius: 20px;
+        margin: 3rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .services-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        padding: 0 1rem;
+    }
+
+    .services-title {
+        color: #512BD4;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+    }
+
+    .services-title:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        background-color: #512BD4;
+        margin: 0.5rem auto 0;
+    }
+
+    .services-subtitle {
+        font-size: 1.2rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .services-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .service-card {
+        background-color: white;
+        color: #333;
+        padding: 2rem;
+        border-radius: 15px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-top: 5px solid #6A1B9A;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-icon-container {
+        background-color: #6A1B9A;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #6A1B9A;
+        font-weight: 600;
+    }
+
+    .service-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        color: #555;
+    }
+
+    .service-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: auto;
+    }
+
+    .service-features li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.8rem;
+        font-size: 0.95rem;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .services-cta {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2rem;
+        background-color: rgba(81, 43, 212, 0.05);
+        border-radius: 15px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .services-cta-text {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .services-cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        background-color: #512BD4;
+        color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border: 2px solid #512BD4;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .services-cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(81, 43, 212, 0.4);
+        background-color: #6A1B9A;
+        border-color: #6A1B9A;
+    }
+
+    @@media (max-width: 992px) {
+        .service-card {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .services-container {
+            padding: 3rem 0;
+            border-radius: 15px;
+        }
+
+        .services-title {
+            font-size: 2rem;
+        }
+
+        .services-subtitle {
+            font-size: 1.1rem;
+        }
+
+        .service-card {
+            padding: 1.5rem;
+        }
+
+        .service-icon-container {
+            width: 70px;
+            height: 70px;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+        }
+
+        .services-cta-text {
+            font-size: 1.2rem;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .services-container {
+            padding: 2rem 0;
+            border-radius: 10px;
+        }
+
+        .services-title {
+            font-size: 1.8rem;
+        }
+
+        .services-subtitle {
+            font-size: 1rem;
+        }
+
+        .service-card {
+            padding: 1.2rem;
+        }
+
+        .service-icon-container {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-description {
+            font-size: 0.9rem;
+        }
+
+        .service-features li {
+            font-size: 0.85rem;
+        }
+
+        .services-cta {
+            padding: 1.5rem;
+        }
+
+        .services-cta-text {
+            font-size: 1.1rem;
+        }
+
+        .services-cta-button {
+            width: 100%;
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+        }
+    }
+</style>
+
+@code {
+    [Inject]
+    private IDialogService DialogService { get; set; } = default!;
+
+    private async Task OnContactClick()
+    {
+        var parameters = new DialogParameters();
+        parameters.Add("Title", "Solicitar información");
+
+        await DialogService.ShowDialogAsync<SimpleEditCatalog>(parameters);
+    }
+}

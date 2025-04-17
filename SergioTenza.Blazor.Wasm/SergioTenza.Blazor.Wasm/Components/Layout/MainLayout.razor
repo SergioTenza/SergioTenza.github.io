@@ -1,29 +1,29 @@
 ﻿@inherits LayoutComponentBase
 
-<FluentLayout Style="margin-top: 10px;">    
-    <FluentHeader>
-        <FluentPersona Style="padding: 5px;"
-            Image="assets/logo.png"
-            ImageSize="50px">
-        </FluentPersona>
+<FluentLayout Style="margin: 0; padding: 0;">
+    <FluentHeader Class="fluent-header" Style="padding: 0.5rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center">
+            <FluentPersona Style="padding: 5px;"
+                Image="assets/logo.png"
+                ImageSize="40px">
+            </FluentPersona>
+            <span style="font-weight: bold; margin-left: 10px; font-size: 1.2rem;">TNZ Servicios Informaticos</span>
+        </FluentStack>
         <FluentSpacer />
-        TNZ Servicios Informaticos
-        @* 
-        Soluciones empresariales con Blazor y dotnet *@
-    </FluentHeader>  
-     <FluentStack Class="main" Orientation="Orientation.Horizontal" Width="100%">        
-        <FluentBodyContent Class="body-content">
-            <div class="content">
-                @Body
-            </div>
-        </FluentBodyContent>
+        <span class="d-none d-md-inline">Soluciones empresariales con Blazor y dotnet</span>
+    </FluentHeader>
+
+    <FluentBodyContent Class="body-content" Style="padding: 0; margin: 0; width: 100%;">
+        <div class="content" style="padding: 0; margin: 0; width: 100%;">
+            @Body
+        </div>
         <FluentDialogProvider />
         <FluentToastProvider/>
-    </FluentStack>   
-    <FluentFooter>
-        
-        <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" Width="100%" Style=@("height: 40px; color: black; text-align: center;")>                       
-            <p>TNZ Servicios Informaticos &copy; 2024. Todos los derechos reservados.</p>
+    </FluentBodyContent>
+
+    <FluentFooter Class="fluent-footer" Style="padding: 1rem 0; margin-top: 2rem; background-color: #f5f5f5; box-shadow: 0 -2px 5px rgba(0,0,0,0.05);">
+        <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" Width="100%" Style="text-align: center;">
+            <p style="margin: 0;">TNZ Servicios Informaticos &copy; 2024. Todos los derechos reservados.</p>
         </FluentStack>
     </FluentFooter>
 </FluentLayout>

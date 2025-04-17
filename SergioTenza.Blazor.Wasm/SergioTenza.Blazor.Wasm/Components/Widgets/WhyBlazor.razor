@@ -1,71 +1,452 @@
-﻿<FluentGridItem xs="12" md="6">
-    <section>   
-        <FluentCard Style="max-width:100vw;">
-            <h2 style="color:#6A1B9A;text-align:center;">¿Por Qué Elegir Blazor?</h2>
-            <h3 style="text-align:center;">Blazor es una excelente opción para cualquier empresa que busque un stack tecnológico único y eficiente.</h3>
-            <FluentGrid Spacing="3" AdaptiveRendering="true" Justify="JustifyContent.Center">
-                <FluentGridItem xs="6" md="4">
-                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
-                        <p>
-                            <img src="assets/c-sharp.png" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
-                        </p>
-                        <strong>Único Stack Tecnológico</strong><br> Blazor permite desarrollar tanto el frontend como el backend utilizando C#, eliminando la necesidad de aprender múltiples lenguajes y frameworks.
-                    </FluentCard>
-                </FluentGridItem>
-                <FluentGridItem xs="6" md="4">
-                    <FluentCard Style="background-color: #512BD4;; color:white;text-align:center;">
-                        <p>
-                            <img src="assets/blazor-server.png" class="img-thumbnail" alt="Responsive image" style="max-height:150px;">
-                            <img src="assets/blazor-webassembly.png" class="img-thumbnail" alt="Responsive image" style="max-height:150px;">
-                            <img src="assets/hybrid-apps-1.png" class="img-thumbnail" alt="Responsive image" style="max-height:150px;">
-                        </p>
-                        <strong>Múltiples Modelos de Hospedaje y Renderizado</strong><br> Blazor ofrece flexibilidad con modelos de hospedaje como Blazor Server, Blazor WebAssembly y Blazor Hybrid, modelos de renderizado ClientSide, ServerSide o Static Server Side (SSR) adaptándose a diferentes necesidades y escenarios.
-                    </FluentCard>
-                </FluentGridItem>
-                <FluentGridItem xs="6" md="4">
-                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
-                        <p>
-                            <img src="assets/nuget-logo.png" class="img-thumbnail" alt="Responsive image" style="max-height:150px;">
-                        </p>
-                        <strong>Ecosistema Estable y Potente</strong><br> Al estar basado en .NET, Blazor se beneficia de un ecosistema robusto y maduro, con acceso a una amplia gama de bibliotecas y herramientas.
-                    </FluentCard>
-                </FluentGridItem>
-                <FluentGridItem xs="6" md="4">
-                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
-                        <p>
-                            <img src="assets/productividad.jpeg" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
-                        </p>
-                        <strong>Productividad Mejorada</strong><br> La capacidad de escribir código en C# mejora la productividad en el desarrollo y mantenimiento de aplicaciones, aprovechando el conocimiento existente de .NET.
-                    </FluentCard>
-                </FluentGridItem>
-                <FluentGridItem xs="6" md="4">
-                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
-                        <p>
-                            <img src="assets/seguridad.jpeg" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
-                        </p>
-                        <strong>Rendimiento y Seguridad</strong> <br>Blazor ofrece beneficios de rendimiento, confiabilidad y seguridad inherentes a .NET, garantizando aplicaciones rápidas y seguras.
-                    </FluentCard>
-                </FluentGridItem>
-                <FluentGridItem xs="6" md="4">
-                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
-                        <p>
-                            <img src="assets/trio.png" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
-                        </p>
-                        <strong>Compatibilidad con HTML,CSS y JS</strong><br> Blazor permite crear interfaces de usuario interactivas y modernas utilizando HTML y CSS, asegurando compatibilidad con todos los navegadores.
-                    </FluentCard>
-                </FluentGridItem>
-                <FluentGridItem xs="6" md="4">
-                    <FluentCard Style="background-color: #512BD4; color:white;text-align:center;">
-                    <p>
-                        <img src="assets/tools.jpeg" class="img-thumbnail" alt="Responsive image" style="border-radius: 25px;max-height:150px;">
-                    </p>
-                    <strong>Integración con Herramientas Modernas</strong><br> Blazor se integra fácilmente con plataformas de hospedaje modernas como Docker, y herramientas de desarrollo como Visual Studio y Visual Studio Code.    
-                    </FluentCard>
-                </FluentGridItem>
-            </FluentGrid>
-            
-            <h3 style="text-align: center;">Con Blazor, puedes construir aplicaciones web interactivas y eficientes, aprovechando todas las ventajas que ofrece el ecosistema .NET.</h3>
-        </FluentCard>
-    </section>
-</FluentGridItem>
-    
+﻿<section id="why-blazor" class="why-blazor-section">
+    <div class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">¿Por Qué Elegir Blazor?</h2>
+            <p class="section-subtitle">Blazor revoluciona el desarrollo web permitiendo crear aplicaciones interactivas con un único stack tecnológico</p>
+        </div>
+
+        <div class="benefits-tabs">
+            <FluentTabs>
+                <FluentTab Label="Ventajas para empresas">
+                    <div class="benefits-grid">
+                        <FluentGrid Spacing="3" AdaptiveRendering="true" Justify="JustifyContent.Center">
+                            <FluentGridItem xs="12" sm="6" md="4">
+                                <div class="benefit-card business">
+                                    <div class="benefit-icon-container">
+                                        <FluentIcon Value="@(new Icons.Regular.Size32.Payment())" Color="@Color.Lightweight" />
+                                    </div>
+                                    <h3 class="benefit-title">Reducción de costos</h3>
+                                    <p class="benefit-description">Menor costo de desarrollo y mantenimiento al utilizar un único lenguaje y framework para toda la aplicación.</p>
+                                </div>
+                            </FluentGridItem>
+
+                            <FluentGridItem xs="12" sm="6" md="4">
+                                <div class="benefit-card business">
+                                    <div class="benefit-icon-container">
+                                        <FluentIcon Value="@(new Icons.Regular.Size32.Timer())" Color="@Color.Lightweight" />
+                                    </div>
+                                    <h3 class="benefit-title">Time-to-market más rápido</h3>
+                                    <p class="benefit-description">Desarrollo más rápido gracias a la reutilización de código y la productividad mejorada del equipo.</p>
+                                </div>
+                            </FluentGridItem>
+
+                            <FluentGridItem xs="12" sm="6" md="4">
+                                <div class="benefit-card business">
+                                    <div class="benefit-icon-container">
+                                        <FluentIcon Value="@(new Icons.Regular.Size32.ShieldTask())" Color="@Color.Lightweight" />
+                                    </div>
+                                    <h3 class="benefit-title">Mayor seguridad</h3>
+                                    <p class="benefit-description">Aprovecha las características de seguridad integradas en .NET para proteger tus aplicaciones y datos.</p>
+                                </div>
+                            </FluentGridItem>
+                        </FluentGrid>
+                    </div>
+                </FluentTab>
+
+                <FluentTab Label="Ventajas técnicas">
+                    <div class="benefits-grid">
+                        <FluentGrid Spacing="3" AdaptiveRendering="true" Justify="JustifyContent.Center">
+                            <FluentGridItem xs="12" sm="6" md="4">
+                                <div class="benefit-card technical">
+                                    <div class="benefit-image-container">
+                                        <img src="assets/c-sharp.png" alt="C# Logo" class="benefit-image">
+                                    </div>
+                                    <h3 class="benefit-title">Único Stack Tecnológico</h3>
+                                    <p class="benefit-description">Desarrolla frontend y backend con C#, eliminando la necesidad de múltiples lenguajes.</p>
+                                </div>
+                            </FluentGridItem>
+
+                            <FluentGridItem xs="12" sm="6" md="4">
+                                <div class="benefit-card technical">
+                                    <div class="benefit-image-container">
+                                        <img src="assets/blazor-server.png" alt="Blazor Server" class="benefit-image">
+                                    </div>
+                                    <h3 class="benefit-title">Múltiples Modelos de Hospedaje</h3>
+                                    <p class="benefit-description">Flexibilidad con Blazor Server, WebAssembly y Hybrid para adaptarse a tus necesidades.</p>
+                                </div>
+                            </FluentGridItem>
+
+                            <FluentGridItem xs="12" sm="6" md="4">
+                                <div class="benefit-card technical">
+                                    <div class="benefit-image-container">
+                                        <img src="assets/nuget-logo.png" alt="NuGet Logo" class="benefit-image">
+                                    </div>
+                                    <h3 class="benefit-title">Ecosistema Estable</h3>
+                                    <p class="benefit-description">Acceso al ecosistema robusto de .NET con amplia gama de bibliotecas y herramientas.</p>
+                                </div>
+                            </FluentGridItem>
+                        </FluentGrid>
+                    </div>
+                </FluentTab>
+
+                <FluentTab Label="Casos de uso">
+                    <div class="use-cases">
+                        <FluentGrid Spacing="3" AdaptiveRendering="true" Justify="JustifyContent.Center">
+                            <FluentGridItem xs="12" sm="6">
+                                <div class="use-case-card">
+                                    <div class="use-case-header">
+                                        <FluentIcon Value="@(new Icons.Regular.Size32.Building())" Color="@Color.Accent" />
+                                        <h3>Aplicaciones empresariales</h3>
+                                    </div>
+                                    <p>Blazor es ideal para aplicaciones empresariales complejas que requieren seguridad, escalabilidad y mantenimiento a largo plazo.</p>
+                                    <ul class="use-case-examples">
+                                        <li>Dashboards administrativos</li>
+                                        <li>Sistemas de gestión interna</li>
+                                        <li>Aplicaciones de análisis de datos</li>
+                                    </ul>
+                                </div>
+                            </FluentGridItem>
+
+                            <FluentGridItem xs="12" sm="6">
+                                <div class="use-case-card">
+                                    <div class="use-case-header">
+                                        <FluentIcon Value="@(new Icons.Regular.Size32.Globe())" Color="@Color.Accent" />
+                                        <h3>Aplicaciones web públicas</h3>
+                                    </div>
+                                    <p>Blazor permite crear experiencias web interactivas y rápidas para usuarios finales con un rendimiento excepcional.</p>
+                                    <ul class="use-case-examples">
+                                        <li>Portales de clientes</li>
+                                        <li>Tiendas online</li>
+                                        <li>Aplicaciones SaaS</li>
+                                    </ul>
+                                </div>
+                            </FluentGridItem>
+                        </FluentGrid>
+                    </div>
+                </FluentTab>
+            </FluentTabs>
+        </div>
+
+        <div class="blazor-cta">
+            <p class="section-conclusion">Con Blazor, puedes construir aplicaciones web interactivas y eficientes, aprovechando todas las ventajas que ofrece el ecosistema .NET.</p>
+            <a href="https://dotnet.microsoft.com/es-es/apps/aspnet/web-apps/blazor" target="_blank" class="learn-more-link">
+                <FluentButton Appearance="Appearance.Accent" Class="learn-more-button">
+                    Aprender más sobre Blazor
+                    <FluentIcon Value="@(new Icons.Regular.Size20.ArrowRight())" Slot="end" />
+                </FluentButton>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .why-blazor-section {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+        border-radius: 20px;
+        margin: 4rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+    }
+
+    .section-title {
+        color: #6A1B9A;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-title:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        background-color: #6A1B9A;
+        margin: 0.5rem auto 0;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+        color: #555;
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .benefits-tabs {
+        margin-bottom: 3rem;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+    }
+
+    .benefits-grid {
+        margin: 2rem 0;
+    }
+
+    .benefit-card {
+        border-radius: 12px;
+        padding: 2rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .benefit-card.business {
+        background: linear-gradient(135deg, #512BD4 0%, #6A1B9A 100%);
+        color: white;
+    }
+
+    .benefit-card.technical {
+        background: white;
+        color: #333;
+        border: 1px solid #e0e0e0;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefit-icon-container {
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+    }
+
+    .benefit-image-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+    }
+
+    .benefit-image {
+        max-height: 80px;
+        border-radius: 8px;
+        object-fit: contain;
+    }
+
+    .benefit-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    .benefit-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    .use-cases {
+        margin: 2rem 0;
+    }
+
+    .use-case-card {
+        background-color: white;
+        border-radius: 12px;
+        padding: 2rem;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-left: 5px solid #512BD4;
+    }
+
+    .use-case-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .use-case-header h3 {
+        font-size: 1.4rem;
+        color: #512BD4;
+        margin: 0;
+    }
+
+    .use-case-examples {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0 0;
+    }
+
+    .use-case-examples li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f0f0f0;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .use-case-examples li:before {
+        content: '\2022';
+        color: #512BD4;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+
+    .use-case-examples li:last-child {
+        border-bottom: none;
+    }
+
+    .blazor-cta {
+        text-align: center;
+        margin-top: 3rem;
+        background-color: white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-conclusion {
+        font-size: 1.4rem;
+        max-width: 800px;
+        margin: 0 auto 1.5rem;
+        color: #333;
+        line-height: 1.6;
+        font-weight: 500;
+    }
+
+    .learn-more-link {
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .learn-more-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        background-color: #512BD4;
+        color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border: 2px solid #512BD4;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .learn-more-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(81, 43, 212, 0.4);
+        background-color: #6A1B9A;
+        border-color: #6A1B9A;
+    }
+
+    @@media (max-width: 992px) {
+        .benefit-card {
+            margin-bottom: 1.5rem;
+        }
+
+        .use-case-card {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .why-blazor-section {
+            padding: 3rem 0;
+            border-radius: 15px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+        }
+
+        .benefits-tabs {
+            padding: 1.5rem;
+        }
+
+        .benefit-card {
+            padding: 1.5rem;
+        }
+
+        .benefit-image {
+            max-height: 70px;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+        }
+
+        .use-case-card {
+            padding: 1.5rem;
+        }
+
+        .use-case-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .blazor-cta {
+            padding: 2rem;
+        }
+
+        .section-conclusion {
+            font-size: 1.2rem;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .why-blazor-section {
+            padding: 2rem 0;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+        }
+
+        .benefits-tabs {
+            padding: 1rem;
+        }
+
+        .benefit-card {
+            padding: 1.2rem;
+        }
+
+        .benefit-image {
+            max-height: 60px;
+        }
+
+        .benefit-title {
+            font-size: 1.2rem;
+        }
+
+        .benefit-description {
+            font-size: 0.9rem;
+        }
+
+        .use-case-card {
+            padding: 1.2rem;
+        }
+
+        .use-case-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .blazor-cta {
+            padding: 1.5rem;
+        }
+
+        .section-conclusion {
+            font-size: 1.1rem;
+        }
+    }
+</style>
