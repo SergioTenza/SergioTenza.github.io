@@ -427,6 +427,29 @@
     window.addEventListener('scroll', throttledNavbarScroll);
 
     // ===================================
+    // Mouse Move Effect on Project Cards
+    // ===================================
+    function setupProjectCardEffects() {
+        const projectCards = document.querySelectorAll('.project-card');
+
+        projectCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+                card.style.setProperty('--mouse-x', `${x}%`);
+                card.style.setProperty('--mouse-y', `${y}%`);
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.setProperty('--mouse-x', '50%');
+                card.style.setProperty('--mouse-y', '50%');
+            });
+        });
+    }
+
+    // ===================================
     // Initialize
     // ===================================
     function init() {
@@ -435,6 +458,9 @@
 
         // Add loaded class to body
         document.body.classList.add('loaded');
+
+        // Setup enhanced effects
+        setupProjectCardEffects();
     }
 
     // Run when DOM is ready
