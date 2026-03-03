@@ -5,7 +5,9 @@
       "mcp__chrome-devtools__list_pages",
       "Bash(powershell.exe:*)",
       "mcp__chrome-devtools__new_page",
-      "Bash(where:*)"
+      "Bash(where:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
