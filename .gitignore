@@ -455,3 +455,4 @@ $RECYCLE.BIN/
 
 # Claude Code configuration (local settings)
 .claude/
+.env
